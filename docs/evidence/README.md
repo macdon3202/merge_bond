@@ -8,6 +8,8 @@ This directory contains machine-generated local verification output:
 
 `studionet-e2e.json` contains the resumable runner's raw transaction hashes, finality/consensus/execution signals and authoritative pre/post readbacks for the live two-wallet lifecycle. `deployment-readback.json` records the initial unauthenticated configuration read. Direct-mode artifacts remain explicitly local engineering evidence and do not substitute for the live record.
 
+[`STUDIONET_E2E.md`](STUDIONET_E2E.md) is the reviewer-facing transaction index with Explorer links, expected negative controls, semantic readback, accounting invariants and UI reconciliation.
+
 The live fixture demonstrates GitHub object identity, merged diff paths, exact-SHA CI and semantic validator consensus. It does not claim independent production deployment or that the repository controller is an independent publisher.
 
 `cloudflare-deployment.json` records the production and immutable Pages URLs plus post-deployment HTTP, header and bundle-binding checks. No API token is stored in this repository.

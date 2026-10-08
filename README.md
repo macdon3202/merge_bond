@@ -107,6 +107,7 @@ Contract changes require a fresh deployment. After deployment:
 - [Test resource manifest](docs/TEST_RESOURCE_MANIFEST.md)
 - [StudioNet runbook](docs/STUDIONET_RUNBOOK.md)
 - [Release status](docs/RELEASE_STATUS.md)
+- [StudioNet E2E transaction index](docs/evidence/STUDIONET_E2E.md)
 
 ## What is not claimed yet
 
