@@ -6,4 +6,6 @@ This directory contains machine-generated local verification output:
 - `frontend-junit.xml`: transaction normalization, finality, exact-ID and chain-ID unit tests.
 - `../assets/frontend-home.png`: Chrome capture of the production bundle after runtime-exception and marker checks.
 
-These artifacts are local engineering evidence. They do not replace Studio Explorer transaction hashes, public GitHub source objects, real wallet balances or authoritative post-state. `deployment-readback.json` records an unauthenticated StudioNet `get_config` read from the supplied deployment; write-path E2E evidence remains pending.
+`studionet-e2e.json` contains the resumable runner's raw transaction hashes, finality/consensus/execution signals and authoritative pre/post readbacks for the live two-wallet lifecycle. `deployment-readback.json` records the initial unauthenticated configuration read. Direct-mode artifacts remain explicitly local engineering evidence and do not substitute for the live record.
+
+The live fixture demonstrates GitHub object identity, merged diff paths, exact-SHA CI and semantic validator consensus. It does not claim independent production deployment or that the repository controller is an independent publisher.

@@ -86,6 +86,29 @@ try {
   for (const marker of ['MergeBond', 'SPONSOR DESK', 'ACTIVE CONTRACT', '0x35C38...F8624', 'HOW IT WORKS']) {
     if (!page.text.includes(marker)) throw new Error(`Rendered page is missing: ${marker}; text=${JSON.stringify(page.text.slice(0, 500))}`);
   }
+  await call('Runtime.evaluate', {
+    expression: `(() => {
+      const set = (input, value) => {
+        const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
+        setter.call(input, value);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      };
+      set(document.querySelector('input[placeholder="Bounty ID"]'), '1');
+      set(document.querySelector('input[placeholder="Claim ID"]'), '1');
+      return true;
+    })()`,
+    returnByValue: true,
+  });
+  await delay(250);
+  await call('Runtime.evaluate', {
+    expression: `([...document.querySelectorAll('button')].find(button => button.textContent.trim() === 'Sync')).click()`,
+    returnByValue: true,
+  });
+  await delay(4000);
+  const reconciled = await call('Runtime.evaluate', { expression: 'document.body.innerText', returnByValue: true });
+  for (const marker of ['Bounty #1', 'PAID', 'Claim #1', 'WINNER', 'Canonical state synchronized.']) {
+    if (!reconciled.result.value.includes(marker)) throw new Error(`Live readback is missing: ${marker}; text=${JSON.stringify(reconciled.result.value.slice(-1200))}`);
+  }
   const image = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
   writeFileSync(screenshot, Buffer.from(image.data, 'base64'));
   console.log(JSON.stringify({ ok: true, width: page.width, height: page.height, screenshot }, null, 2));

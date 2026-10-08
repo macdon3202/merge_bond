@@ -1,0 +1,1029 @@
+{
+  "network": "studionet",
+  "contract": "0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624",
+  "started_at": "2026-10-08T04:58:35.193Z",
+  "actors": {
+    "sponsor": "0xFeD97e2aE1A8C1983b7cA206B3545e6A2c685E43",
+    "developer": "0xc67532aeF9D2879cBA9375a02E6217A3524657B8"
+  },
+  "actions": {
+    "register_sponsor": {
+      "who": "A",
+      "functionName": "register_wallet",
+      "args": [],
+      "value": "0",
+      "hash": "0x930607b526af809ef9674f2ea2b9298c60b698f613a9388002e873506a987203",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            84,
+            82,
+            69,
+            71,
+            73,
+            83,
+            84,
+            69,
+            82,
+            69,
+            68
+          ],
+          "readable": "\"REGISTERED\""
+        }
+      },
+      "post": null
+    },
+    "register_developer": {
+      "who": "B",
+      "functionName": "register_wallet",
+      "args": [],
+      "value": "0",
+      "hash": "0x37516c21bf367a4a85cf8b009fa4cc75ee89a6660e447aa19408e935ccc57bc3",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            84,
+            82,
+            69,
+            71,
+            73,
+            83,
+            84,
+            69,
+            82,
+            69,
+            68
+          ],
+          "readable": "\"REGISTERED\""
+        }
+      },
+      "post": null
+    },
+    "create_happy": {
+      "who": "A",
+      "functionName": "create_bounty",
+      "args": [
+        "macdon3202",
+        "merge_bond",
+        "1",
+        "main",
+        "1000000000000",
+        "900",
+        "fixture/src/",
+        "fixture/tests/",
+        "contract-tests"
+      ],
+      "value": "0",
+      "hash": "0xc4df37cc00c66f40204082c1de9cc269654fe66d6840c15a5e8b1a7a8807b73a",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            9
+          ],
+          "readable": "1"
+        }
+      },
+      "post": null
+    },
+    "failure_wrong_actor_seal": {
+      "who": "B",
+      "functionName": "seal_issue",
+      "args": [
+        "1"
+      ],
+      "value": "0",
+      "hash": "0x8da0e5080ec1f117b330ae601ce47faff54bfc3dbee13b24c7c2e4ad9a6a3124",
+      "phase": "VERIFIED",
+      "pre": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "DRAFT",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      },
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "ERROR",
+        "payload": "SPONSOR_REQUIRED"
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "DRAFT",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    "seal_happy": {
+      "who": "A",
+      "functionName": "seal_issue",
+      "args": [
+        "1"
+      ],
+      "value": "0",
+      "hash": "0x6a76db21d6a2a71a423dc98ba77cbf904ed2f8c58e8f71404edd305b6bd0fe72",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            52,
+            83,
+            69,
+            65,
+            76,
+            69,
+            68
+          ],
+          "readable": "\"SEALED\""
+        }
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "SEALED",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    "failure_wrong_value": {
+      "who": "A",
+      "functionName": "fund_bounty",
+      "args": [
+        "1"
+      ],
+      "value": "999999999999",
+      "hash": "0x91333cbc72544d12a85d01668f36c8cd7902538cb65dbf6e9dbbb83f31a53070",
+      "phase": "VERIFIED",
+      "pre": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "SEALED",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      },
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            132,
+            1,
+            82,
+            69,
+            70,
+            85,
+            78,
+            68,
+            95,
+            67,
+            76,
+            65,
+            73,
+            77,
+            65,
+            66,
+            76,
+            69
+          ],
+          "readable": "\"REFUND_CLAIMABLE\""
+        }
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "SEALED",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    "withdraw_wrong_value_refund": {
+      "who": "A",
+      "functionName": "withdraw_refund",
+      "args": [],
+      "value": "0",
+      "hash": "0xb418275c37f4efc559e4103efb99e318dc1da574685521f583ce3b15bb514e1e",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            148,
+            1,
+            84,
+            82,
+            65,
+            78,
+            83,
+            70,
+            69,
+            82,
+            95,
+            82,
+            69,
+            81,
+            85,
+            69,
+            83,
+            84,
+            69,
+            68
+          ],
+          "readable": "\"TRANSFER_REQUESTED\""
+        }
+      },
+      "post": null
+    },
+    "fund_happy": {
+      "who": "A",
+      "functionName": "fund_bounty",
+      "args": [
+        "1"
+      ],
+      "value": "1000000000000",
+      "hash": "0xb37faa5177da0e1da9f49bd4d4c246cbab91343cc7530aae3c71e0501a2a38f1",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            52,
+            70,
+            85,
+            78,
+            68,
+            69,
+            68
+          ],
+          "readable": "\"FUNDED\""
+        }
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "OPEN",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    "failure_sponsor_self_claim": {
+      "who": "A",
+      "functionName": "submit_claim",
+      "args": [
+        "1",
+        "2"
+      ],
+      "value": "0",
+      "hash": "0x623088172efa0ca199f8b0cdf9b06d6dc5938bbab58771cd7fc481686b899a98",
+      "phase": "VERIFIED",
+      "pre": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "OPEN",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      },
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "ERROR",
+        "payload": "INVALID_CLAIM"
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "OPEN",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    "submit_valid_claim": {
+      "who": "B",
+      "functionName": "submit_claim",
+      "args": [
+        "1",
+        "2"
+      ],
+      "value": "0",
+      "hash": "0xe25da1cbf87ee5e0f4ae4115c64380db55f51d78c36751e7a33380ba8867cb8e",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            9
+          ],
+          "readable": "1"
+        }
+      },
+      "post": null
+    },
+    "submit_competing_claim": {
+      "who": "B",
+      "functionName": "submit_claim",
+      "args": [
+        "1",
+        "999"
+      ],
+      "value": "0",
+      "hash": "0xcac6653f05dab0d846cc1933b20fc33e7e7f77632f0459e83b83264553ee5e4c",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            17
+          ],
+          "readable": "2"
+        }
+      },
+      "post": null
+    },
+    "evaluate_valid_claim": {
+      "who": "A",
+      "functionName": "evaluate_claim",
+      "args": [
+        "1"
+      ],
+      "value": "0",
+      "hash": "0xd3585b49fa71ad20415694ada97d83c3e941e41f3379771faae9cf7d8ed857a0",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            68,
+            82,
+            69,
+            83,
+            69,
+            82,
+            86,
+            69,
+            68
+          ],
+          "readable": "\"RESERVED\""
+        }
+      },
+      "post": {
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "1000000000000",
+          "deadline": 1791436716,
+          "duration": 900,
+          "id": 1,
+          "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+          "issue_number": 1,
+          "owner": "macdon3202",
+          "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "RESERVED",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        },
+        "claim": {
+          "bounty_id": 1,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "head_sha": "9174314be1bd5d7a7bd805eae99c86a730e7b62a",
+          "id": 1,
+          "merge_sha": "2db22aea9132adf513beaad12da4bf0d200a2577",
+          "pr_number": 2,
+          "production_files": [
+            "fixture/src/eligibility.js"
+          ],
+          "reason": "CRITERIA_AND_PROVENANCE_SATISFIED",
+          "source_digest": "b6fce70d68d5319190faff0a41fd7e01170ac751f2859c5d0d1928c795d864cf",
+          "state": "WINNER",
+          "test_files": [
+            "fixture/tests/eligibility.test.mjs"
+          ],
+          "verdict": "SATISFIED"
+        },
+        "accounting": {
+          "balance": "1000000000000",
+          "claimant_claimable": "1000000000000",
+          "deposited": "1999999999999",
+          "locked": "0",
+          "outbound_requested": "999999999999",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        }
+      }
+    },
+    "conflict_late_evaluation": {
+      "who": "B",
+      "functionName": "evaluate_claim",
+      "args": [
+        "2"
+      ],
+      "value": "0",
+      "hash": "0x9304e895692322e7cc33c1de5b915087a1c1f4fed1e1e0ad95f2fac4e91a7082",
+      "phase": "VERIFIED",
+      "pre": {
+        "bounty_id": 1,
+        "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+        "head_sha": "",
+        "id": 2,
+        "merge_sha": "",
+        "pr_number": 999,
+        "production_files": [],
+        "reason": "",
+        "source_digest": "",
+        "state": "SUBMITTED",
+        "test_files": [],
+        "verdict": ""
+      },
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "ERROR",
+        "payload": "BOUNTY_NOT_OPEN"
+      },
+      "post": {
+        "bounty_id": 1,
+        "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+        "head_sha": "",
+        "id": 2,
+        "merge_sha": "",
+        "pr_number": 999,
+        "production_files": [],
+        "reason": "",
+        "source_digest": "",
+        "state": "SUBMITTED",
+        "test_files": [],
+        "verdict": ""
+      }
+    },
+    "withdraw_winner": {
+      "who": "B",
+      "functionName": "withdraw_bounty",
+      "args": [
+        "1"
+      ],
+      "value": "0",
+      "hash": "0xead099fb45aa5fb672de655ed79e4a59f6c5b487b4606a4dcb361d38f6fd35cc",
+      "phase": "VERIFIED",
+      "pre": null,
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "payload": {
+          "raw": [
+            148,
+            1,
+            84,
+            82,
+            65,
+            78,
+            83,
+            70,
+            69,
+            82,
+            95,
+            82,
+            69,
+            81,
+            85,
+            69,
+            83,
+            84,
+            69,
+            68
+          ],
+          "readable": "\"TRANSFER_REQUESTED\""
+        }
+      },
+      "post": {
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "deadline": 1791436716,
+          "duration": 900,
+          "id": 1,
+          "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+          "issue_number": 1,
+          "owner": "macdon3202",
+          "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        },
+        "accounting": {
+          "balance": "0",
+          "claimant_claimable": "0",
+          "deposited": "1999999999999",
+          "locked": "0",
+          "outbound_requested": "1999999999999",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        }
+      }
+    },
+    "failure_double_withdraw": {
+      "who": "B",
+      "functionName": "withdraw_bounty",
+      "args": [
+        "1"
+      ],
+      "value": "0",
+      "hash": "0x9136681a3cb585408692e74fcdaa36f97299f398d6f3723080cfbae7ee3c29de",
+      "phase": "VERIFIED",
+      "pre": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "PAID",
+        "test_prefix": "fixture/tests/",
+        "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+        "winning_claim": 1
+      },
+      "receipt": {
+        "status": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "execution": "ERROR",
+        "payload": "NOTHING_DUE"
+      },
+      "post": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "PAID",
+        "test_prefix": "fixture/tests/",
+        "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+        "winning_claim": 1
+      }
+    }
+  },
+  "assertions": [
+    {
+      "label": "deployment version",
+      "passed": true,
+      "details": {
+        "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+        "bounty_count": 0,
+        "claim_count": 0,
+        "deployer_authority": "NONE",
+        "duration_max": 900,
+        "duration_min": 120,
+        "version": "MERGE_BOND_V1"
+      }
+    },
+    {
+      "label": "deployment version",
+      "passed": true,
+      "details": {
+        "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+        "bounty_count": 1,
+        "claim_count": 0,
+        "deployer_authority": "NONE",
+        "duration_max": 900,
+        "duration_min": 120,
+        "version": "MERGE_BOND_V1"
+      }
+    },
+    {
+      "label": "create -> DRAFT",
+      "passed": true,
+      "details": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "DRAFT",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    {
+      "label": "wrong actor rollback equality",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "label": "canonical issue sealed",
+      "passed": true,
+      "details": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "SEALED",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    {
+      "label": "wrong value cannot open bounty",
+      "passed": true,
+      "details": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 0,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "SEALED",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    {
+      "label": "exact funding -> OPEN",
+      "passed": true,
+      "details": {
+        "amount": "1000000000000",
+        "base_branch": "main",
+        "claimant_due": "0",
+        "deadline": 1791436716,
+        "duration": 900,
+        "id": 1,
+        "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+        "issue_number": 1,
+        "owner": "macdon3202",
+        "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+        "production_prefix": "fixture/src/",
+        "reason": "",
+        "repository": "merge_bond",
+        "required_check": "contract-tests",
+        "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+        "sponsor_due": "0",
+        "state": "OPEN",
+        "test_prefix": "fixture/tests/",
+        "winner": "0x0000000000000000000000000000000000000000",
+        "winning_claim": 0
+      }
+    },
+    {
+      "label": "sponsor self-claim rollback equality",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "label": "semantic evaluation reserves exact winner",
+      "passed": true,
+      "details": {
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "1000000000000",
+          "deadline": 1791436716,
+          "duration": 900,
+          "id": 1,
+          "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+          "issue_number": 1,
+          "owner": "macdon3202",
+          "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "RESERVED",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        },
+        "claim": {
+          "bounty_id": 1,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "head_sha": "9174314be1bd5d7a7bd805eae99c86a730e7b62a",
+          "id": 1,
+          "merge_sha": "2db22aea9132adf513beaad12da4bf0d200a2577",
+          "pr_number": 2,
+          "production_files": [
+            "fixture/src/eligibility.js"
+          ],
+          "reason": "CRITERIA_AND_PROVENANCE_SATISFIED",
+          "source_digest": "b6fce70d68d5319190faff0a41fd7e01170ac751f2859c5d0d1928c795d864cf",
+          "state": "WINNER",
+          "test_files": [
+            "fixture/tests/eligibility.test.mjs"
+          ],
+          "verdict": "SATISFIED"
+        },
+        "accounting": {
+          "balance": "1000000000000",
+          "claimant_claimable": "1000000000000",
+          "deposited": "1999999999999",
+          "locked": "0",
+          "outbound_requested": "999999999999",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        }
+      }
+    },
+    {
+      "label": "losing claim cannot mutate after reservation",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "label": "winner payout -> PAID",
+      "passed": true,
+      "details": {
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "deadline": 1791436716,
+          "duration": 900,
+          "id": 1,
+          "issue_digest": "c5b0589e410a919bb25c48cf19251f8e9fcddc991aea45530fb08535425cd19a",
+          "issue_number": 1,
+          "owner": "macdon3202",
+          "policy_digest": "7bb225bab9f9b87386601b2ab2b9ecf08616f79ee14256592837d8c9e454253f",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        },
+        "accounting": {
+          "balance": "0",
+          "claimant_claimable": "0",
+          "deposited": "1999999999999",
+          "locked": "0",
+          "outbound_requested": "1999999999999",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        }
+      }
+    },
+    {
+      "label": "double withdrawal rollback equality",
+      "passed": true,
+      "details": {}
+    }
+  ],
+  "readbacks": {
+    "final_config": {
+      "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+      "bounty_count": 1,
+      "claim_count": 2,
+      "deployer_authority": "NONE",
+      "duration_max": 900,
+      "duration_min": 120,
+      "version": "MERGE_BOND_V1"
+    },
+    "final_accounting": {
+      "balance": "0",
+      "claimant_claimable": "0",
+      "deposited": "1999999999999",
+      "locked": "0",
+      "outbound_requested": "1999999999999",
+      "refund_claimable": "0",
+      "sponsor_claimable": "0"
+    }
+  },
+  "github": {
+    "repository": "macdon3202/merge_bond",
+    "issue": 1,
+    "pr": 2,
+    "head_sha": "9174314be1bd5d7a7bd805eae99c86a730e7b62a",
+    "merge_sha": "2db22aea9132adf513beaad12da4bf0d200a2577"
+  },
+  "happy_bounty_id": 1,
+  "happy_claim_id": 1,
+  "conflict_claim_id": 2,
+  "completed_at": "2026-10-08T05:09:17.211Z"
+}
