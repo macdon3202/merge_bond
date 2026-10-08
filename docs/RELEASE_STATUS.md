@@ -19,7 +19,7 @@ Status as of 2026-10-08: **StudioNet happy/failure/conflict lifecycle and fronte
 | Live custody/transfer conservation | PASS | deposited/outbound `1999999999999`; final balance and all claimable/locked fields zero |
 | Live adversarial sequences | PASS (selected) | wrong actor, wrong value/refund, sponsor self-claim, losing evaluation after reservation, double withdrawal; complete pre/post equality where rejected |
 | Frontend authoritative reconciliation | PASS | production UI loaded bounty #1 `PAID` and claim #1 `WINNER` after canonical sync |
-| Cloudflare Pages deployment | NOT RUN | deployment remains separate from StudioNet E2E |
+| Cloudflare Pages deployment | PASS | `https://mergebond.pages.dev`; HTTP 200, headers applied, bundle contains exact contract/version |
 
 ## Release rule
 

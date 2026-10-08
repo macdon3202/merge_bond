@@ -1,0 +1,18 @@
+{
+  "provider": "Cloudflare Pages",
+  "project": "mergebond",
+  "production_url": "https://mergebond.pages.dev",
+  "immutable_deployment_url": "https://5c70e07b.mergebond.pages.dev",
+  "deployed_from_commit": "af5d8762c763b6042720a1b788adbd5c25c589bb",
+  "verified_http_status": 200,
+  "verified_asset": "/assets/index-lsVaHYDu.js",
+  "contract_address_present": true,
+  "contract_version_present": true,
+  "security_headers": {
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "verified_at": "2026-10-08"
+}

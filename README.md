@@ -87,6 +87,10 @@ The UI accepts an injected browser wallet. It does not contain private keys or f
 
 Current StudioNet deployment address: [`0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624`](https://explorer-studio.genlayer.com/address/0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624). The address has been supplied by the deployer; deployed-source matching and live lifecycle evidence remain pending.
 
+Live application: https://mergebond.pages.dev
+
+Immutable Cloudflare deployment: https://5c70e07b.mergebond.pages.dev
+
 Contract changes require a fresh deployment. After deployment:
 
 1. set the same address in gitignored `frontend/.env.production` (or `VITE_CONTRACT_ADDRESS` in the build environment); for Git-integrated Pages builds, set the same Cloudflare build variable;
@@ -108,6 +112,6 @@ Contract changes require a fresh deployment. After deployment:
 
 - The supplied StudioNet address has not yet been source-matched through recorded Explorer evidence.
 - No live two-wallet transaction or real GEN transfer has been recorded.
-- No Cloudflare deployment has been created for this release.
+- Cloudflare Pages production was deployed and HTTP/bundle binding was verified; see `docs/evidence/cloudflare-deployment.json`.
 - GitHub availability and unauthenticated API rate limits remain external dependencies.
 - Local mocks establish contract behavior under controlled inputs; they do not prove a public GitHub fixture exists or that StudioNet validators can retrieve it.
