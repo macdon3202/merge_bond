@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --test --test-isolation=none tests/*.test.mjs ../fixture/tests/*.test.mjs",
+    "test:ci": "node --test tests/*.test.mjs ../fixture/tests/*.test.mjs",
     "qa:browser": "node tests/browser-qa.mjs",
     "verify": "npm test && npm run build",
     "deploy": "npm run build && wrangler pages deploy dist --project-name mergebond --branch main"
