@@ -1,0 +1,28 @@
+{
+  "name": "mergebond-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test --test-isolation=none tests/*.test.mjs ../fixture/tests/*.test.mjs",
+    "qa:browser": "node tests/browser-qa.mjs",
+    "verify": "npm test && npm run build",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name mergebond --branch main"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.7",
+    "wrangler": "4.144.0"
+  },
+  "overrides": {
+    "esbuild": "0.28.1",
+    "sharp": "0.35.5"
+  }
+}

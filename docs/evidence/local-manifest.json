@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-10-08T11:21:50+07:00",
+  "scope": "local-verification-plus-read-only-studionet-config; write-e2e-pending",
+  "contract": {
+    "path": "contracts/merge_bond.py",
+    "sha256": "43ae9062effa372ebe3290671610e6c0ca6ae274eb71b4d9a899c44df34c2c01",
+    "direct_tests": 23,
+    "lint": "passed",
+    "validation": "passed"
+  },
+  "frontend": {
+    "package_lock_sha256": "822831f8413f855e0854286f96cd27d435ec3e53b31d5a8f7cb1a8a0b401ec00",
+    "unit_tests": 5,
+    "npm_audit_vulnerabilities": 0,
+    "production_build": "passed",
+    "browser_runtime_qa": "passed",
+    "rendered_dimensions": [1409, 2194]
+  },
+  "artifacts": [
+    {
+      "path": "docs/evidence/direct-mode-junit.xml",
+      "sha256": "0ff65f08d3ea3301de48061c7bfe516442075f707e662a005bb466b51c307b03"
+    },
+    {
+      "path": "docs/evidence/frontend-junit.xml",
+      "sha256": "39fc7e1a8f32e0d7fab630b69c9f1d28497a44a897d8e2af8fbd522023aff6f9"
+    },
+    {
+      "path": "docs/assets/frontend-home.png",
+      "sha256": "8aaffb8feb9e923e9f513c0268adb8353f638e4e69263047fb497041441dda58"
+    },
+    {
+      "path": "docs/evidence/deployment-readback.json",
+      "sha256": "6b7e580d72338ad3e3fb74a498833bdac75b208d5a0731200306591008c65bc2"
+    }
+  ],
+  "live_claims": [
+    "StudioNet get_config readback returned MERGE_BOND_V1 and deployer_authority NONE for 0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624"
+  ]
+}

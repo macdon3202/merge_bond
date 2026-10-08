@@ -1,0 +1,15 @@
+{
+  "network": "studionet",
+  "contract": "0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624",
+  "read_method": "get_config",
+  "result": {
+    "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+    "bounty_count": 0,
+    "claim_count": 0,
+    "deployer_authority": "NONE",
+    "duration_max": 900,
+    "duration_min": 120,
+    "version": "MERGE_BOND_V1"
+  },
+  "scope": "Unauthenticated authoritative RPC readback. This proves the address exposes the expected configuration, but does not by itself prove deployed-source byte identity or any write-path E2E result."
+}
