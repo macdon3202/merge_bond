@@ -5,7 +5,7 @@ import { isEligible, missingEligibilityGates } from '../src/eligibility.js';
 test('rejects truthy non-boolean values independently in every gate', () => {
   const valid = { merged: true, checksPassed: true, productionChanged: true, regressionAdded: true };
   for (const field of Object.keys(valid)) {
-    for (const invalid of ['true', 1, {}, [], false, null, undefined]) {
+    for (const invalid of ['true', 1, {}, [], false, null, undefined, NaN, Symbol('true')]) {
       assert.equal(isEligible({ ...valid, [field]: invalid }), false, field);
     }
   }
