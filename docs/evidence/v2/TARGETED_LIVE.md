@@ -52,5 +52,17 @@ Bounty remains OPEN, winning_claim=0, claimant claimable=0, locked=1000000000000
 This tests real paginated input
 with an omission on page2, not a forged missing HTTP page or every truncation form.
 
-Deadline bounty3: 1791626209. Expiry/refund cleanup must be recorded after deadline.
+## Expiry and refund cleanup
+
+Deadline bounty3: 1791626209.
+[Expiry by B](https://explorer-studio.genlayer.com/transactions/0x524cf9f39b1cb416a0c0063902bc9ae45356c49e34d8bafc2a24dcad2cb5dd68)
+and [refund withdrawal by A](https://explorer-studio.genlayer.com/transactions/0x2d1098533950ac234c3cb9f67191b164ef0731b1f0ba33dcd83b973250afcbd1)
+both FINALIZED / MAJORITY_AGREE / SUCCESS.
+Sponsor balance: 199941991500000001000 -> 199941992500000001000 wei,
+exact delta 1000000000000 wei. Final bounty PAID, no winner;
+balance, locked, claimant_claimable, sponsor_claimable and refund_claimable all 0.
+Cumulative deposited = outbound_requested = 3000000000000 wei.
+The incomplete journal contains final snapshots and balance observations;
+pagination journal preserves its earlier evaluation-time snapshot.
+
 Browser-wallet E2E omitted by user request. Controlled fixtures are not third-party audit.
