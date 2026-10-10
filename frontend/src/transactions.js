@@ -1,4 +1,4 @@
-export const CONTRACT_VERSION = 'MERGE_BOND_V1';
+export const CONTRACT_VERSION = 'MERGE_BOND_V2';
 
 export function normalizeHash(value) {
   const hash = typeof value === 'string' ? value : value?.txId || value?.hash;
@@ -51,6 +51,10 @@ export function returnedPositiveInt(receipt) {
     receipt?.return_value,
   ];
   for (const candidate of candidates) {
+    if (candidate && typeof candidate === 'object') {
+      const exact = candidate.readable ?? candidate.value ?? candidate.data;
+      if (/^[1-9]\d*$/.test(String(exact)) && Number.isSafeInteger(Number(exact))) return Number(exact);
+    }
     if (Number.isInteger(candidate) && candidate > 0) return candidate;
     if (typeof candidate !== 'string') continue;
     const text = candidate.trim();

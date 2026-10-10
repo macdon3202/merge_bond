@@ -1,4 +1,16 @@
-# Release status
+# V2 candidate — replacement deployed; release gates remain
+
+Source/interface is now MERGE_BOND_V2. V1 results below are historical and cannot
+prove the corrected guards. See [V2 verification](V2_VERIFICATION.md).
+
+Active V2: `0x850482D16aDD6237f269911da2516F1F51E58510`, exact source parity.
+Live happy settlement and terminal rollback: [V2 E2E](evidence/v2/STUDIONET_E2E.md).
+Fresh local actual-contract results: 75 passed, 1 xfailed, 138 warnings.
+Browser-wallet signing is omitted at user request; do not claim full browser E2E.
+Additional live negative/source/recovery controls and V2 production publication
+must be supported by fresh receipts before claiming those gates pass.
+
+# Historical V1 release status
 
 Status as of 2026-10-08: **StudioNet happy/failure/conflict lifecycle and frontend readback verified**.
 

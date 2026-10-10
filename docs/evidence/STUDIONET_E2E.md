@@ -1,3 +1,9 @@
+# Historical V1 — not V2 remediation evidence
+
+These transactions belong to source V1. Contributor authorization, prospective
+timing and complete-acquisition guards need fresh transactions after V2 deployment.
+See [V2 verification](../V2_VERIFICATION.md).
+
 # MergeBond StudioNet E2E transaction record
 
 This document is the human-readable index for the raw machine record in [`studionet-e2e.json`](studionet-e2e.json). Every transaction below was submitted to the deployed contract, reached `FINALIZED`, and was reconciled against authoritative contract state. Error transactions are expected negative controls, not failed test infrastructure.

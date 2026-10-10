@@ -1,5 +1,6 @@
 import { createClient } from 'genlayer-js';
 import { studionet } from 'genlayer-js/chains';
+import { CalldataAddress } from 'genlayer-js/types';
 import { CONTRACT_VERSION, normalizeHash, receiptState, sameAddress, sameChainId } from './transactions.js';
 
 export const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || '';
@@ -9,7 +10,10 @@ const reader = () => createClient({ chain: studionet });
 
 export async function readContract(functionName, args = []) {
   if (!isConfigured) throw new Error('Contract address is not configured. Deploy first, then set VITE_CONTRACT_ADDRESS.');
-  return reader().readContract({ address: CONTRACT_ADDRESS, functionName, args });
+  const typedArgs = functionName === 'get_authorization_template'
+    ? [args[0], args[1], new CalldataAddress(Uint8Array.from(args[2].slice(2).match(/../g), byte => parseInt(byte, 16)))]
+    : args;
+  return reader().readContract({ address: CONTRACT_ADDRESS, functionName, args: typedArgs });
 }
 
 export async function connectWallet() {

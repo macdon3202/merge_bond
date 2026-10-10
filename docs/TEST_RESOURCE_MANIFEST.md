@@ -1,5 +1,10 @@
 # Test resource manifest
 
+V2 resource policy and synthetic fixture definitions are in
+[V2_VERIFICATION.md](V2_VERIFICATION.md). The executed public resources below belong
+to V1; PR #2 predates funding and is not eligible for V2. Fresh public resources
+must be prepared after replacement deployment and funding, before evaluation.
+
 This file separates controlled Direct Mode fixtures from public StudioNet evidence. A locator supplied by a participant is not itself proof.
 
 ## Direct Mode fixture set

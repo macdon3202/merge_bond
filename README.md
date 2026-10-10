@@ -1,5 +1,23 @@
 # MergeBond
 
+> V2 candidate (2026-10-10): corrected source is [contracts/merge_bond.py](contracts/merge_bond.py).
+> Replacement source parity and live positive lifecycle are recorded in [V2 E2E](docs/evidence/v2/STUDIONET_E2E.md). V1 address `0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624`
+> and its transactions are historical and do **not** prove the V2 guards.
+> Start with [V2 verification and deployment instructions](docs/V2_VERIFICATION.md).
+
+V2 requires a public, revision-pinned Gist **owned by the PR author** to authorize the
+exact payout sender, chain, contract, bounty, sealed policy, repository, issue,
+PR, head/merge commits and funded window. An unrelated wallet cannot reserve a PR
+slot before this proof passes. Authorization is an immutable grant for that exact
+claim, not a revocable delegation.
+
+Eligibility is prospective: `funded_at <= PR.created_at <= PR.merged_at <= submitted_at < deadline`.
+The complete issue title/body (maximum 12,000 UTF-8 bytes) is sealed without slicing.
+Up to 200 changed files are fetched in complete 100-file pages and reconciled against
+`changed_files`; every patch must match its full hunk and addition/deletion counts.
+Missing/binary/truncated patches, unsupported totals or evidence above 120,000 bytes
+fail closed. The latest check set must be complete and at most 100 runs.
+
 MergeBond is a competitive implementation-bounty dApp for GenLayer. A sponsor seals an exact GitHub issue and a deterministic acceptance policy, locks GEN, and opens a short claim window. Developers submit merged pull requests. The first claim that passes canonical GitHub provenance gates, exact-CI binding, production-and-test path checks, and independent semantic prover/falsifier consensus reserves the payout.
 
 ## Why GenLayer
@@ -56,7 +74,7 @@ cd ..
 powershell -ExecutionPolicy Bypass -File scripts/verify.ps1
 ```
 
-Current local result on 2026-10-08:
+Historical V1 local result on 2026-10-08 (not V2 verification):
 
 - GenVM lint and semantic validation: passed, 13 public methods.
 - Direct Mode contract suite: 23 passed.
@@ -85,11 +103,11 @@ The UI accepts an injected browser wallet. It does not contain private keys or f
 
 ## Deployment gate
 
-Current StudioNet deployment address: [`0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624`](https://explorer-studio.genlayer.com/address/0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624). The address has been supplied by the deployer; deployed-source matching and live lifecycle evidence remain pending.
+Current StudioNet V2 deployment: [`0x850482D16aDD6237f269911da2516F1F51E58510`](https://explorer-studio.genlayer.com/address/0x850482D16aDD6237f269911da2516F1F51E58510). Deployed source matches exactly; live positive settlement and terminal rollback evidence are in [V2 E2E](docs/evidence/v2/STUDIONET_E2E.md). Further live controls are tracked separately. Browser-wallet signing journey is explicitly omitted at the user's request, not verified.
 
 Live application: https://mergebond.pages.dev
 
-Immutable Cloudflare deployment: https://5c70e07b.mergebond.pages.dev
+Historical V1 immutable deployment: https://5c70e07b.mergebond.pages.dev (not V2 evidence).
 
 Contract changes require a fresh deployment. After deployment:
 

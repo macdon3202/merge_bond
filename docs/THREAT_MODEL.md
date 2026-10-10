@@ -48,3 +48,18 @@
 ## Deployment-specific checks
 
 Before submission, confirm the deployed source is byte-for-byte the repository contract, the active address is consistent across frontend/docs/Explorer, and live GEN conservation matches contract accounting and participant balance changes.
+# V2 boundary updates
+
+The V2 source adds author-owned revision-pinned Gist authentication before claim
+index consumption; exact chain/contract/bounty/policy/issue/PR/wallet/commit/window
+binding; prospective PR timing; complete criteria and paginated patch acquisition;
+and a final state/deadline recheck. See [specification](SPECIFICATION.md).
+
+Repository maintainers are not trusted to authorize the PR author's payout wallet:
+PR bodies and repository comments are not used for that authority. A Gist copied
+by an attacker fails the owner-ID check. GitHub account compromise remains outside
+this trust model. A grant cannot be revoked after submission; deletion/outage before
+evaluation blocks reservation and leaves sponsor expiry recovery available.
+
+The matrix above originated with V1; fresh V2 live coverage is pending replacement
+deployment. Local adversarial tests are in `tests/test_v2_guards.py`.

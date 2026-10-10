@@ -1,6 +1,6 @@
 param(
   [Parameter(Mandatory = $true)]
-  [ValidateSet('issue', 'issue-edit', 'pr', 'merge', 'pr-status', 'checks', 'job-log')]
+  [ValidateSet('issue', 'issue-edit', 'pr', 'merge', 'pr-status', 'checks', 'job-log', 'gist')]
   [string]$Action,
   [string]$Title,
   [string]$Body,
@@ -29,6 +29,13 @@ $headers = @{
 $root = 'https://api.github.com/repos/macdon3202/merge_bond'
 
 switch ($Action) {
+  'gist' {
+    if (-not $Body) { throw 'Supply exact authorization JSON in Body' }
+    $null = $Body | ConvertFrom-Json
+    $payload = @{ description='MergeBond V2 synthetic E2E payout authorization'; public=$true; files=@{ 'mergebond-authorization.json'=@{content=$Body} } } | ConvertTo-Json -Depth 8
+    $result = Invoke-RestMethod -Method Post -Uri 'https://api.github.com/gists' -Headers $headers -Body $payload -ContentType 'application/json' -TimeoutSec 30
+    [ordered]@{ id=$result.id; revision=$result.history[0].version; owner_id=$result.owner.id; html_url=$result.html_url } | ConvertTo-Json
+  }
   'issue' {
     $payload = @{ title = $Title; body = $Body } | ConvertTo-Json
     $result = Invoke-RestMethod -Method Post -Uri "$root/issues" -Headers $headers -Body $payload -ContentType 'application/json' -TimeoutSec 30
@@ -51,7 +58,7 @@ switch ($Action) {
   }
   'pr-status' {
     $result = Invoke-RestMethod -Uri "$root/pulls/$Number" -Headers $headers -TimeoutSec 30
-    [ordered]@{ state = $result.state; merged = $result.merged; head_sha = $result.head.sha; merge_sha = $result.merge_commit_sha } | ConvertTo-Json
+    [ordered]@{ state = $result.state; merged = $result.merged; head_sha = $result.head.sha; merge_sha = $result.merge_commit_sha; contributor_id=$result.user.id; created_at=$result.created_at; merged_at=$result.merged_at } | ConvertTo-Json
   }
   'checks' {
     $result = Invoke-RestMethod -Uri "$root/commits/$Sha/check-runs" -Headers $headers -TimeoutSec 30

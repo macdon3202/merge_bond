@@ -84,6 +84,9 @@ export default function App() {
   const [bountyId, setBountyId] = useState('');
   const [claimId, setClaimId] = useState('');
   const [prNumber, setPrNumber] = useState('');
+  const [gistId, setGistId] = useState('');
+  const [gistRevision, setGistRevision] = useState('');
+  const [authorization, setAuthorization] = useState(null);
   const [bounty, setBounty] = useState(null);
   const [claim, setClaim] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -165,14 +168,26 @@ export default function App() {
     label: 'Exact bounty value locked and OPEN state confirmed.',
   });
   const submit = () => transact({
-    name: 'submit_claim', args: [BigInt(bountyId), BigInt(prNumber)],
+    name: 'submit_claim', args: [BigInt(bountyId), BigInt(prNumber), gistId.trim(), gistRevision.trim()],
     after: async (receipt) => {
       const id = returnedPositiveInt(receipt);
       const state = await loadClaim(id);
-      if (state.state !== 'SUBMITTED') throw new Error('Readback mismatch: expected SUBMITTED.');
+      if (state.state !== 'SUBMITTED' || !sameAddress(state.claimant, wallet.account)
+          || state.bounty_id !== Number(bountyId) || state.pr_number !== Number(prNumber)
+          || state.gist_id !== gistId.trim() || state.gist_revision !== gistRevision.trim()) {
+        throw new Error('Readback mismatch: claim identity or contributor authorization.');
+      }
     },
     label: 'Claim submitted and exact claim ID confirmed.',
   });
+  const loadAuthorization = async () => {
+    try {
+      if (!wallet || !bountyId || !prNumber) throw new Error('Connect the payout wallet and enter bounty / PR IDs first.');
+      const result = await readContract('get_authorization_template', [BigInt(bountyId), BigInt(prNumber), wallet.account]);
+      setAuthorization(result);
+      setTx({ message: 'Template loaded. Fill the exact PR SHAs and contributor ID, then publish from the PR author’s GitHub account.' });
+    } catch (error) { setTx({ message: error.message, error: true }); }
+  };
   const evaluate = () => transact({
     name: 'evaluate_claim', args: [BigInt(claimId)],
     after: async () => { await loadClaim(); await loadBounty(claim?.bounty_id || bountyId); },
@@ -228,11 +243,15 @@ export default function App() {
           </>}
 
           {mode === 'developer' && <>
-            <div className="section-title"><p>DEVELOPER DESK</p><h2>Compete with a merged pull request</h2><span>Any external wallet can register and claim. A sponsor cannot claim its own bounty.</span></div>
+            <div className="section-title"><p>DEVELOPER DESK</p><h2>Compete with an authorized pull request</h2><span>The PR must be created and merged inside the funded window. Its author must authorize this payout wallet using a public, revision-pinned Gist. Sponsors cannot claim their own bounty.</span></div>
             <div className="action-stack">
               <button className="outline" disabled={busy || !isConfigured} onClick={register}>Register this wallet</button>
               <Field label="Pull request number"><input type="number" min="1" value={prNumber} onChange={(event) => setPrNumber(event.target.value)} placeholder="11" /></Field>
-              <button className="primary" disabled={busy || !bountyId || !prNumber} onClick={submit}>Submit competing claim</button>
+              <button className="outline" disabled={busy || !wallet || !bountyId || !prNumber} onClick={loadAuthorization}>Load contributor authorization template</button>
+              {authorization && <div><p>Publish one file named mergebond-authorization.json in a public Gist owned by the PR author. Reload the template after changing wallet, bounty or PR.</p><pre style={{whiteSpace: 'pre-wrap', overflowWrap: 'anywhere'}}>{JSON.stringify(authorization, null, 2)}</pre></div>}
+              <Field label="Author-owned public Gist ID (32 hex)"><input value={gistId} onChange={(event) => setGistId(event.target.value)} /></Field>
+              <Field label="Exact Gist revision (40 hex)"><input value={gistRevision} onChange={(event) => setGistRevision(event.target.value)} /></Field>
+              <button className="primary" disabled={busy || !bountyId || !prNumber || !/^[0-9a-f]{32}$/.test(gistId.trim()) || !/^[0-9a-f]{40}$/.test(gistRevision.trim())} onClick={submit}>Submit authorized claim</button>
               {claim && ['SUBMITTED', 'UNRESOLVED'].includes(claim.state) && <button className="signal" disabled={busy} onClick={evaluate}>Run permissionless evaluation</button>}
               {bounty?.state === 'RESERVED' && winner && <button className="primary" disabled={busy} onClick={withdraw}>Withdraw reserved bounty</button>}
             </div>
@@ -241,7 +260,7 @@ export default function App() {
           {mode === 'verify' && <>
             <div className="section-title"><p>PUBLIC VERIFICATION</p><h2>Replay the evidence decision</h2><span>Evaluation is permissionless. Any reviewer wallet may trigger it; identity does not influence the verdict.</span></div>
             <div className="checks">
-              {['Exact issue bytes still match the sealed digest','PR is merged into the configured repository and branch','Production and regression paths both changed','Named GitHub check succeeded on the exact head SHA','Prover and falsifier agree on every consequential field'].map((item, index) => <div key={item}><b>{index+1}</b><span>{item}</span></div>)}
+              {['Complete issue acceptance content still matches the sealed digest','PR is created and merged within the funded window, into the configured repository and branch','PR author’s pinned Gist authorizes the exact payout wallet and bounty','Every changed file and complete patch is present, including pagination','Named GitHub check succeeded on the exact head SHA','Prover and falsifier agree on every consequential field'].map((item, index) => <div key={item}><b>{index+1}</b><span>{item}</span></div>)}
             </div>
             {claim && ['SUBMITTED', 'UNRESOLVED'].includes(claim.state) && <button className="signal" disabled={busy} onClick={evaluate}>Evaluate loaded claim</button>}
           </>}
@@ -263,8 +282,8 @@ export default function App() {
       <section className="how">
         <p className="eyebrow">HOW IT WORKS</p><h2>Assertions do not unlock funds.</h2>
         <div className="how-grid">
-          <article><b>01</b><h3>Seal</h3><p>The sponsor commits to exact GitHub issue bytes and a deterministic repository, branch, path and CI policy.</p></article>
-          <article><b>02</b><h3>Compete</h3><p>Independent developers submit merged PR numbers. The contract fetches canonical GitHub facts itself.</p></article>
+          <article><b>01</b><h3>Seal</h3><p>The sponsor commits to complete GitHub issue acceptance content and a deterministic repository, branch, path and CI policy.</p></article>
+          <article><b>02</b><h3>Authorize</h3><p>The PR author publishes a wallet authorization. PR creation and merge must occur inside the funded window.</p></article>
           <article><b>03</b><h3>Falsify</h3><p>Validators compare issue criteria with actual production and regression patches while looking for omissions.</p></article>
           <article><b>04</b><h3>Reserve</h3><p>Only the first fully grounded claim reserves the payout. Failed or unknown facts leave funds recoverable.</p></article>
         </div>

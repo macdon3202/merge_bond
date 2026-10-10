@@ -1,4 +1,11 @@
-# StudioNet two-wallet runbook
+# V2 replacement deployment required
+
+Follow [V2 verification/runbook](V2_VERIFICATION.md). The V1 runbook below is
+historical: its PR predates funding and its two-argument submit_claim is obsolete.
+Fund first, create/merge a fresh PR, publish the author-owned authorization Gist,
+then claim with four arguments. Primary wallet only deploys; auxiliary wallets test.
+
+# Historical V1 StudioNet two-wallet runbook
 
 Active deployment under test: `0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624`.
 

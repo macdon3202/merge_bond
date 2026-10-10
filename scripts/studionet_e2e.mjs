@@ -2,6 +2,11 @@ import { createAccount, createClient } from '../frontend/node_modules/genlayer-j
 import { studionet } from '../frontend/node_modules/genlayer-js/dist/chains/index.js';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
+// Historical V1 runner: its PR predates funding and cannot qualify under V2.
+if (process.env.MERGEBOND_RUN_HISTORICAL_V1 !== '1') {
+  throw new Error('Historical V1 evidence only. Use studionet_v2.mjs with a fresh V2 deployment.');
+}
+
 const ADDRESS = '0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624';
 const ROOT = new URL('../../', import.meta.url);
 const stateDir = new URL('./.state/', import.meta.url);

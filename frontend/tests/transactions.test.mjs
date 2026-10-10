@@ -28,6 +28,7 @@ test('extracts exact returned record ID', () => {
     consensus_data: { leader_receipt: [{ result: { payload: '{"result":9}' } }] },
   }), 9);
   assert.throws(() => returnedPositiveInt({}));
+  assert.equal(returnedPositiveInt({consensus_data: {leader_receipt: [{result: {payload: {readable: '12'}}}]}}), 12);
 });
 
 test('compares wallet addresses case-insensitively', () => {
