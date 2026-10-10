@@ -21,4 +21,16 @@ Gist `8b91e9c251480839ba5fb942fcf30ba9`, revision
 No injected GitHub response is represented as live acquisition proof. Pagination
 and omitted/truncated patches remain actual-contract local regression coverage,
 not authenticated live malformed-GitHub-response coverage.
-Browser wallet journey omitted at user request. Recovery receipts pending.
+Browser wallet journey omitted at user request.
+
+## Expiry and sponsor refund
+
+Permissionless expiry by B: [finalized success](https://explorer-studio.genlayer.com/transactions/0x5b7c79a06d634157137d5d7f865dea04ce35b2ffe397c18cced065d2da0d51ec).
+Post-state EXPIRED_REFUNDABLE, reason NO_WINNER_BEFORE_DEADLINE, sponsor_due
+1000000000000, locked zero, claimant_due zero.
+Sponsor A refund: [finalized success](https://explorer-studio.genlayer.com/transactions/0x04f0db6dcca35c43f10a1f5540980bf7f39583301ced6408dd1432bef328cbf6).
+Both parent transactions MAJORITY_AGREE / leader SUCCESS.
+A balance before 199941991500000001000, after 199941992500000001000 wei:
+exact +1000000000000. Final bounty PAID with no winner, contract balance zero,
+all dues and locked zero. Cumulative deposited/outbound_requested both
+2000000000000 wei across the positive payout and this refund.

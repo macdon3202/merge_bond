@@ -17,4 +17,6 @@ Seal receipt ERROR was quorum cancellation: CONSENSUS_VALIDATOR_QUORUM_REACHED,
 fatal=false, Validator execution cancelled after quorum; not a contract exception.
 
 Remaining: targeted wrong-domain grant with non-sponsor caller; authentic live
-incomplete-patch/page control; expiry/refund receipt; browser-wallet journey omitted.
+incomplete-patch/page control; browser-wallet journey omitted.
+Expiry/refund has since finalized with exact sponsor balance delta, recorded in
+[negative results](NEGATIVE_RESULTS.md).

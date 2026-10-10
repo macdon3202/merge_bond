@@ -1,6 +1,13 @@
 # V2 verification packet
 
 Status: replacement-deployment candidate; **not submission-ready**.
+Update 2026-10-10: replacement source parity and live positive settlement are now
+recorded in [V2 E2E](evidence/v2/STUDIONET_E2E.md), negative controls in
+[negative results](evidence/v2/NEGATIVE_RESULTS.md), and public V2 publication in
+[publication](evidence/v2/PUBLICATION.md). Earlier pending statements below are
+historical run notes, not current deployment status. Frontend tests now 8 pass
+after merging public fixture regressions. Browser-wallet journey is omitted at
+user request and remains unverified.
 Corrected source: [merge_bond.py](../contracts/merge_bond.py).
 Specification: [SPECIFICATION.md](SPECIFICATION.md).
 The primary wallet only deploys; auxiliary A sponsors, auxiliary B claims/pays out.
