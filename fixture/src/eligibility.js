@@ -1,5 +1,5 @@
 export function isEligible({ merged, checksPassed, productionChanged, regressionAdded }) {
-  return Boolean(merged && checksPassed && productionChanged && regressionAdded);
+  return [merged, checksPassed, productionChanged, regressionAdded].every(value => value === true);
 }
 
 export function missingEligibilityGates(evidence) {
