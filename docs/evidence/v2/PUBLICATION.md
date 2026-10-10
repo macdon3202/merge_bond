@@ -16,7 +16,9 @@ authorization. No claim that all source-completeness controls have run live.
 Seal receipt ERROR was quorum cancellation: CONSENSUS_VALIDATOR_QUORUM_REACHED,
 fatal=false, Validator execution cancelled after quorum; not a contract exception.
 
-Remaining: targeted wrong-domain grant with non-sponsor caller; authentic live
-incomplete-patch/page control; browser-wallet journey omitted.
+Targeted wrong-domain grant with non-sponsor caller and authentic omitted-patch
+controls (including a 103-file PR with omission on page 2) have since finalized:
+[targeted live evidence](TARGETED_LIVE.md). These do not prove every possible
+truncation or missing-page failure independently. Browser-wallet journey omitted.
 Expiry/refund has since finalized with exact sponsor balance delta, recorded in
 [negative results](NEGATIVE_RESULTS.md).

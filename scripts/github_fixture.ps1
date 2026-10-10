@@ -1,6 +1,6 @@
 param(
   [Parameter(Mandatory = $true)]
-  [ValidateSet('issue', 'issue-edit', 'pr', 'merge', 'pr-status', 'checks', 'job-log', 'gist')]
+  [ValidateSet('issue', 'issue-edit', 'pr', 'merge', 'pr-status', 'checks', 'job-log', 'gist', 'files')]
   [string]$Action,
   [string]$Title,
   [string]$Body,
@@ -8,7 +8,8 @@ param(
   [string]$Base = 'main',
   [int]$Number,
   [string]$Sha,
-  [long]$JobId
+  [long]$JobId,
+  [int]$Page = 1
 )
 
 $ErrorActionPreference = 'Stop'
@@ -29,6 +30,10 @@ $headers = @{
 $root = 'https://api.github.com/repos/macdon3202/merge_bond'
 
 switch ($Action) {
+  'files' {
+    $result = Invoke-RestMethod -Uri "$root/pulls/$Number/files?per_page=100&page=$Page" -Headers $headers -TimeoutSec 30
+    $result | ForEach-Object { [ordered]@{filename=$_.filename;additions=$_.additions;deletions=$_.deletions;changes=$_.changes;has_patch=($null -ne $_.patch);patch_length=([string]$_.patch).Length} } | ConvertTo-Json
+  }
   'gist' {
     if (-not $Body) { throw 'Supply exact authorization JSON in Body' }
     $null = $Body | ConvertFrom-Json

@@ -7,8 +7,11 @@ Active V2: `0x850482D16aDD6237f269911da2516F1F51E58510`, exact source parity.
 Live happy settlement and terminal rollback: [V2 E2E](evidence/v2/STUDIONET_E2E.md).
 Fresh local actual-contract results: 75 passed, 1 xfailed, 138 warnings.
 Browser-wallet signing is omitted at user request; do not claim full browser E2E.
-Additional live negative/source/recovery controls and V2 production publication
-must be supported by fresh receipts before claiming those gates pass.
+Live negative and expiry/refund controls: [negative results](evidence/v2/NEGATIVE_RESULTS.md).
+Non-sponsor wrong payout-domain and authentic omitted patches, including page 2:
+[targeted results](evidence/v2/TARGETED_LIVE.md). Generic SOURCE_UNAVAILABLE does
+not provide a per-guard execution trace; not every truncation variant was run live.
+V2 Pages publication and HTTP/bundle parity: [publication](evidence/v2/PUBLICATION.md).
 
 # Historical V1 release status
 

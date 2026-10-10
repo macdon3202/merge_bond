@@ -11,7 +11,7 @@ if (!/^0x[0-9a-f]{40}$/i.test(address || '') || address.toLowerCase() === '0x35c
   throw new Error('Set MERGEBOND_ADDRESS to the replacement V2 deployment; V1 is forbidden.');
 }
 const stage = process.argv[2];
-if (!['create', 'template', 'claim', 'evaluate', 'withdraw', 'expire', 'replay', 'negative'].includes(stage)) throw new Error('Invalid lifecycle stage');
+if (!['create', 'template', 'claim', 'evaluate', 'evaluate-incomplete', 'withdraw', 'expire', 'replay', 'negative'].includes(stage)) throw new Error('Invalid lifecycle stage');
 const env = Object.fromEntries(readFileSync(new URL('../../secrets/genlayer-test-wallets.env', import.meta.url), 'utf8')
   .split(/\r?\n/).filter(line => line.includes('=') && !line.trim().startsWith('#'))
   .map(line => { const i = line.indexOf('='); return [line.slice(0, i).trim(), line.slice(i + 1).trim().replace(/^['"<]|['">]$/g, '')]; }));
@@ -115,7 +115,7 @@ if (stage === 'create') {
   const bid = BigInt(state.bounty_id);
   if (stage === 'negative') {
     const label = process.env.MERGEBOND_CONTROL;
-    if (!['historic-pr', 'wrong-wallet', 'missing-gist'].includes(label)) throw new Error('Specify negative control');
+    if (!['historic-pr', 'wrong-wallet', 'wrong-domain', 'missing-gist'].includes(label)) throw new Error('Specify negative control');
     const pr = BigInt(process.env.MERGEBOND_PR);
     const gist = process.env.MERGEBOND_GIST || '00000000000000000000000000000000';
     const revision = process.env.MERGEBOND_GIST_REVISION || '0000000000000000000000000000000000000000';
@@ -131,10 +131,16 @@ if (stage === 'create') {
       state.claim_id ||= exactId(action.receipt); state.latest = await snapshot(); save();
       if (state.latest.claim.state !== 'SUBMITTED') throw new Error('Claim readback mismatch');
     }
-  } else if (stage === 'evaluate') {
+  } else if (stage === 'evaluate' || stage === 'evaluate-incomplete') {
     if (!state.claim_id) throw new Error('Run claim first.');
     await send('evaluate', 'A', 'evaluate_claim', [BigInt(state.claim_id)]);
     state.latest = await snapshot(); save();
+    if (stage === 'evaluate-incomplete') {
+      if (state.latest.claim.state !== 'UNRESOLVED' || state.latest.bounty.state !== 'OPEN'
+        || state.latest.bounty.winning_claim !== 0 || state.latest.accounting.claimant_claimable !== '0') throw new Error('Incomplete source did not fail closed');
+      console.log('Incomplete source remains non-payable');
+      exitStage();
+    }
     if (state.latest.claim.state !== 'WINNER' || !['RESERVED', 'PAID'].includes(state.latest.bounty.state)
       || Number(state.latest.bounty.winning_claim) !== Number(state.claim_id)) throw new Error('No matching winner; inspect journal.');
   } else if (stage === 'replay') {
@@ -159,3 +165,4 @@ if (stage === 'create') {
     console.log('Inspect transfer execution and recipient balance before calling settlement proven.');
   }
 }
+function exitStage() { process.exit(0); }
