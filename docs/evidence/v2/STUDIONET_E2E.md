@@ -69,9 +69,9 @@ with the complete snapshot unchanged.
   and the original harness assertion expecting only RESERVED failed. This is not
   a failed evaluation transaction. Harness now permits the same winning claim
   in RESERVED or PAID. Journal reconciliation must be sequential thereafter.
-- Wrong-wallet/pre-funded-PR rejection, incomplete-source negative live cases,
-  expiry/refund and independent browser-wallet/UI journey are not established
-  by this positive lifecycle and terminal controls. Local mocks are not live proof.
+- The positive lifecycle alone does not establish negative/source/recovery cases;
+  their additional live evidence follows below. Browser-wallet E2E remains omitted.
+  Local mocks are not live proof.
 - Latest frontend publication is recorded in [STEWARD_FRONTEND_PUBLICATION.md](STEWARD_FRONTEND_PUBLICATION.md); HTTP/bundle parity is not browser E2E.
 
 ## Live negative controls — 2026-10-10
@@ -94,9 +94,9 @@ deadline 1791624542. [Exact-head CI](https://github.com/macdon3202/merge_bond/ac
 Gist `8b91e9c251480839ba5fb942fcf30ba9`, revision
 `9b99112e6b4bae89f4e9a29f7fc68086606a58ca`, owned by PR author, grants B.
 
-No injected GitHub response is represented as live acquisition proof. Pagination
-and omitted/truncated patches remain actual-contract local regression coverage,
-not authenticated live malformed-GitHub-response coverage.
+No injected GitHub response is represented as live acquisition proof. The targeted
+section below records authentic live omitted patches, including page 2. Arbitrary
+malformed HTTP pages and every truncation variant are not independently proven live.
 Browser wallet journey omitted at user request.
 
 ### Expiry and sponsor refund
