@@ -1,6 +1,7 @@
 # MergeBond V2 — reviewer entry point
 
 - [Live frontend](https://mergebond.pages.dev)
+- [Latest frontend publication checks](docs/evidence/v2/STEWARD_FRONTEND_PUBLICATION.md)
 - [Submission text and exact reviewer path](docs/STEWARD_SUBMIT.md)
 - [Active StudioNet contract](https://explorer-studio.genlayer.com/address/0x850482D16aDD6237f269911da2516F1F51E58510)
 - [Corrected contract source](contracts/merge_bond.py)
