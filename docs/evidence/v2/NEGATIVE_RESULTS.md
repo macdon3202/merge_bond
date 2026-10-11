@@ -1,5 +1,8 @@
 # Live negative controls — 2026-10-10
 
+This historical standalone report is now included in the canonical
+[consolidated E2E report](STUDIONET_E2E.md#live-negative-controls--2026-10-10).
+
 Deployment V2, bounty 2, issue 3. Full receipts/pre-post in
 [negative journal](0x850482d16add6237f269911da2516f1f51e58510-negative.json).
 

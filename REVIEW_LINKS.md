@@ -6,9 +6,7 @@
 - [Active StudioNet contract](https://explorer-studio.genlayer.com/address/0x850482D16aDD6237f269911da2516F1F51E58510)
 - [Corrected contract source](contracts/merge_bond.py)
 - [Deployment/source parity](docs/evidence/v2/DEPLOYMENT.md)
-- [Happy path, settlement and terminal rollback](docs/evidence/v2/STUDIONET_E2E.md)
-- [Historic PR, missing grant, expiry/refund](docs/evidence/v2/NEGATIVE_RESULTS.md)
-- [Wrong payout domain, omitted patches, page 2 and exact refund](docs/evidence/v2/TARGETED_LIVE.md)
+- [Complete live E2E: happy path, rollback, failures, payout-domain, pagination and refunds](docs/evidence/v2/STUDIONET_E2E.md)
 - [Local actual-contract tests and limitations](docs/V2_VERIFICATION.md)
 - [Public fixture/source policy](docs/TEST_RESOURCE_MANIFEST.md)
 

@@ -1,5 +1,8 @@
 # Targeted payout-domain and incomplete-patch live controls
 
+This standalone report is now included in the canonical
+[consolidated E2E report](STUDIONET_E2E.md#targeted-payout-domain-and-incomplete-patch-live-controls).
+
 Same deployed V2 source, bounty 3, auxiliary sponsor A / claimant B.
 Raw journal: [incomplete](0x850482d16add6237f269911da2516f1f51e58510-incomplete.json).
 
