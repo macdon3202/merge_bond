@@ -21,6 +21,7 @@ const initialDraft = {
   tests: 'tests/',
   check: 'contract-tests',
 };
+const REVIEW = 'https://github.com/macdon3202/merge_bond/blob/main/';
 
 const short = (value = '') => value ? `${value.slice(0, 7)}...${value.slice(-5)}` : 'not connected';
 const fmt = (value) => value ? new Date(Number(value) * 1000).toLocaleString() : '--';
@@ -116,6 +117,16 @@ export default function App() {
       if (bountyId) await loadBounty();
       if (claimId) await loadClaim();
       setTx({ message: 'Canonical state synchronized.', done: true });
+    } catch (error) { setTx({ message: error.message, error: true }); }
+    finally { setBusy(false); }
+  };
+  const inspectEvidence = async (bid, cid) => {
+    try {
+      setBusy(true);
+      await loadBounty(bid);
+      await loadClaim(cid);
+      setMode('verify');
+      setTx({ message: 'Historical V2 record read from chain. No transaction sent; settled records cannot be replayed.', done: true });
     } catch (error) { setTx({ message: error.message, error: true }); }
     finally { setBusy(false); }
   };
@@ -219,6 +230,22 @@ export default function App() {
       </section>
 
       <TxRail tx={tx} />
+
+      <section className="review-pack" aria-label="Steward review packet">
+        <p className="eyebrow">V2 / STEWARD REVIEW</p>
+        <h2>One deployment. Traceable evidence.</h2>
+        <p>Author-bound payout grants, prospective PR eligibility and complete paginated patches. Inspect settled records without connecting a wallet, or follow the guide to create a fresh two-wallet test.</p>
+        <div className="review-links">
+          <a href={`${REVIEW}docs/STEWARD_SUBMIT.md`} target="_blank" rel="noreferrer">Submission & reviewer guide ↗</a>
+          <a href={`${REVIEW}REVIEW_LINKS.md`} target="_blank" rel="noreferrer">All source & evidence ↗</a>
+          <a href={`${REVIEW}docs/evidence/v2/TARGETED_LIVE.md`} target="_blank" rel="noreferrer">Domain / incomplete-patch live tests ↗</a>
+        </div>
+        <div className="review-links">
+          <button className="outline" disabled={busy || !isConfigured} onClick={() => inspectEvidence(1, 1)}>Read happy settlement #1</button>
+          <button className="outline" disabled={busy || !isConfigured} onClick={() => inspectEvidence(3, 4)}>Read page-2 failure #4</button>
+        </div>
+        <small>Live evidence uses auxiliary wallets and controlled public GitHub fixtures. Browser-wallet signing E2E was not performed for V2. SOURCE_UNAVAILABLE is a generic reason, not a per-guard trace.</small>
+      </section>
 
       <nav className="modes">
         {['sponsor', 'developer', 'verify'].map((item) => <button key={item} className={mode === item ? 'active' : ''} onClick={() => setMode(item)}><span>0{['sponsor','developer','verify'].indexOf(item)+1}</span>{item}</button>)}

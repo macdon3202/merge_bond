@@ -106,6 +106,12 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .state-actions { display: grid; margin-top: 18px; }
 .state-actions button { background: var(--acid); }
 
+.review-pack { margin: 24px 0; padding: 28px; border: 1px solid var(--line); background: #f0f6ef; }
+.review-pack h2 { margin: 8px 0; font-size: clamp(24px, 4vw, 38px); }
+.review-pack p { max-width: 850px; line-height: 1.6; }
+.review-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 18px 0; }
+.review-links a { color: var(--ink); text-underline-offset: 4px; }
+.review-pack small { display: block; line-height: 1.6; color: #526058; }
 .how { padding: 100px 0; }
 .how > h2 { font-size: clamp(42px, 6vw, 82px); letter-spacing: -.06em; margin: 0 0 48px; }
 .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }

@@ -1,6 +1,8 @@
 # V2 verification packet
 
-Status: replacement-deployment candidate; **not submission-ready**.
+Current evidence index: [REVIEW_LINKS.md](../REVIEW_LINKS.md).
+Submission text and verification boundaries: [STEWARD_SUBMIT.md](STEWARD_SUBMIT.md).
+The records below include historical run notes; use the linked current receipts.
 Update 2026-10-10: replacement source parity and live positive settlement are now
 recorded in [V2 E2E](evidence/v2/STUDIONET_E2E.md), negative controls in
 [negative results](evidence/v2/NEGATIVE_RESULTS.md), and public V2 publication in

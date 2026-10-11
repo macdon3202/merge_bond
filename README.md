@@ -1,5 +1,8 @@
 # MergeBond
 
+Current V2 steward packet: [REVIEW_LINKS.md](REVIEW_LINKS.md).
+Copy-ready submission and reviewer steps: [STEWARD_SUBMIT.md](docs/STEWARD_SUBMIT.md).
+
 > V2 candidate (2026-10-10): corrected source is [contracts/merge_bond.py](contracts/merge_bond.py).
 > Replacement source parity and live positive lifecycle are recorded in [V2 E2E](docs/evidence/v2/STUDIONET_E2E.md). V1 address `0x35C387b55a7Be9E2B74Ee4d56FD631936E1F8624`
 > and its transactions are historical and do **not** prove the V2 guards.
