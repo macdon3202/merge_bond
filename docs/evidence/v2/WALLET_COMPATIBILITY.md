@@ -33,6 +33,21 @@ bundle verification likewise prove publication parity, not interactive wallet E2
 Contract source and address are unchanged:
 `0x850482D16aDD6237f269911da2516F1F51E58510`. No redeployment is required.
 
+## Verification and publication
+
+- Complete frontend/controlled-fixture suite: 17 passed, 0 failed/skipped.
+- Vite production build: 478 modules, success; main JavaScript 923.38 kB,
+  gzip 257.47 kB. The bundle-size warning remains.
+- Fix source commit: `2c6768f`, pushed to `origin/main`.
+- Cloudflare Pages deployment succeeded:
+  https://0f65c845.mergebond.pages.dev
+- Production https://mergebond.pages.dev returned HTTP 200 and served
+  `/assets/index-CV1YYQFF.js`. The retrieved asset contains the exact V2 address,
+  no-Snaps connection notice and account-change guard; it does not contain the
+  former `.connect("studionet")` call.
+- This proves source/build/publication parity. A reviewer must still confirm the
+  interactive browser-extension connect/sign flow; it was not automated here.
+
 ## Resubmission response
 
 Fixed the wallet connection failure caused by genlayer-js 1.1.8 calling

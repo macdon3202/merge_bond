@@ -19,6 +19,18 @@ One-liner: GenLayer implementation bounties that bind author-authorized payout w
 
 Replaced the contract with V2 at 0x850482D16aDD6237f269911da2516F1F51E58510. A public revision-pinned Gist owned by the PR author now binds the payout sender and exact chain, contract, bounty, policy, repository, issue and PR commits. PR creation and merge must occur within the funded window. Evaluation requires complete sealed criteria, reconciled file pages and complete patches before semantic checks. Live auxiliary-wallet evidence covers successful settlement, rejected wrong payout-domain with unchanged state, historical PR/missing grant rejection, omitted patch including page 2 of a 103-file PR, and exact expiry refunds. REVIEW_LINKS.md links corrected source, receipts and readbacks. Browser-wallet signing E2E was omitted; generic SOURCE_UNAVAILABLE does not prove every truncation variant independently.
 
+### Wallet-connect remediation response
+
+Fixed the wallet connection error caused by genlayer-js 1.1.8 invoking
+wallet_getSnaps through the global provider. MergeBond now uses the selected
+EIP-1193 provider directly for account access, StudioNet network setup and the SDK
+client, without requesting Snaps. It verifies the final chain/account, propagates
+rejected prompts and clears stale sessions. Added seven wallet regressions; the
+complete 17-test frontend/fixture suite and production build pass. The fix is live
+at https://mergebond.pages.dev and the production bundle was verified against the
+V2 contract. Contract source/deployment are unchanged. Real browser-extension
+signing remains a manual reviewer check, not an automated claim.
+
 ## Project description
 
 Sponsors seal complete public GitHub issue criteria, choose repository/branch,
