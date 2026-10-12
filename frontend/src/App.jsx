@@ -98,8 +98,10 @@ export default function App() {
 
   const update = (key) => (event) => setDraft((current) => ({ ...current, [key]: event.target.value }));
   const connect = async () => {
-    try { setWallet(await connectWallet()); setTx({ message: 'Wallet connected. No transaction sent.', done: true }); }
+    setBusy(true); setWallet(null);
+    try { setWallet(await connectWallet()); setTx({ message: 'Wallet connected on StudioNet. No Snaps required; no transaction sent.', done: true }); }
     catch (error) { setTx({ message: error.message, error: true }); }
+    finally { setBusy(false); }
   };
   const loadBounty = async (id = bountyId) => {
     if (!id) throw new Error('Enter a bounty ID.');
@@ -220,7 +222,7 @@ export default function App() {
       <header>
         <a className="brand" href="#top"><img src="/mergebond-logo.png" alt="MergeBond logo" /><div><b>MergeBond</b><span>evidence before payout</span></div></a>
         <div className="network"><i /> StudioNet</div>
-        <button className="wallet" onClick={connect}>{wallet ? short(wallet.account) : 'Connect wallet'}</button>
+        <button className="wallet" disabled={busy} onClick={connect}>{wallet ? short(wallet.account) : 'Connect wallet'}</button>
       </header>
 
       <section className="hero" id="top">
