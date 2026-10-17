@@ -25,4 +25,8 @@ jobs:
         working-directory: frontend
       - run: npm run test:ci
         working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+        env:
+          VITE_CONTRACT_ADDRESS: '0x850482D16aDD6237f269911da2516F1F51E58510'
 

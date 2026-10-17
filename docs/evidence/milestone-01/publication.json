@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-10-17T08:58:53.2228535Z",
+  "production": "https://mergebond.pages.dev",
+  "immutable": "https://7e54bc2a.mergebond.pages.dev",
+  "source_commit": "73ac0afee45bdcdd62e44ea4175feffb928deff8",
+  "http_status": 200,
+  "asset": "/assets/index-kgppODPq.js",
+  "local_asset_sha256": "308276174b5ca6972c9a71addd0392a0dd58a2425df81a928365cea3084a7565",
+  "production_asset_sha256": "308276174b5ca6972c9a71addd0392a0dd58a2425df81a928365cea3084a7565",
+  "markers_verified": [
+    "PUBLIC EVIDENCE EXPLORER",
+    "MERGEBOND_READBACK_V1",
+    "0x850482D16aDD6237f269911da2516F1F51E58510"
+  ],
+  "public_env_contract": "0x850482D16aDD6237f269911da2516F1F51E58510",
+  "credential_pattern_absent": true,
+  "headers": {
+    "frame_options": [
+      "DENY"
+    ],
+    "referrer_policy": [
+      "strict-origin-when-cross-origin"
+    ],
+    "content_type_options": [
+      "nosniff"
+    ]
+  }
+}
