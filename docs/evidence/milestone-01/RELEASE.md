@@ -87,3 +87,9 @@ had 75 passes and one failure because clean runners lacked `cloudpickle`.
 `requirements.txt` now pins 3.1.2 (the locally tested version); the CI workflow
 also builds the frontend against the exact public V2 address. No contract or
 test assertion was changed to mask that failure.
+
+The [corrected CI run](https://github.com/macdon3202/merge_bond/actions/runs/39019503332)
+for `db3556acdccbdaad948450047955667ab776a665` completed successfully:
+contract pytest, frozen npm install, frontend/fixture tests and production build
+all passed their job steps. The known contract decoder xfail is still present;
+a successful workflow does not turn it into independent validator proof.
