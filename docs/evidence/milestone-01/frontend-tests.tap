@@ -1,0 +1,178 @@
+TAP version 13
+# Subtest: rejects truthy non-boolean values independently in every gate
+ok 1 - rejects truthy non-boolean values independently in every gate
+  ---
+  duration_ms: 2.0802
+  type: 'test'
+  ...
+# Subtest: requires every release-evidence gate
+ok 2 - requires every release-evidence gate
+  ---
+  duration_ms: 0.2521
+  type: 'test'
+  ...
+# Subtest: reports every missing gate in deterministic policy order
+ok 3 - reports every missing gate in deterministic policy order
+  ---
+  duration_ms: 1.0104
+  type: 'test'
+  ...
+# Subtest: large controlled diff boundaries
+ok 4 - large controlled diff boundaries
+  ---
+  duration_ms: 0.1788
+  type: 'test'
+  ...
+# Subtest: controlled second-page fixture
+ok 5 - controlled second-page fixture
+  ---
+  duration_ms: 0.1832
+  type: 'test'
+  ...
+# Subtest: pagination acquires exactly 8 descending IDs and handles the final page
+ok 6 - pagination acquires exactly 8 descending IDs and handles the final page
+  ---
+  duration_ms: 0.8328
+  type: 'test'
+  ...
+# Subtest: an unreadable row fails the whole page instead of hiding missing evidence
+ok 7 - an unreadable row fails the whole page instead of hiding missing evidence
+  ---
+  duration_ms: 0.8357
+  type: 'test'
+  ...
+# Subtest: empty deployments require no entity reads
+ok 8 - empty deployments require no entity reads
+  ---
+  duration_ms: 0.222
+  type: 'test'
+  ...
+# Subtest: wrong contract version, malformed counts and wrong record IDs fail closed
+ok 9 - wrong contract version, malformed counts and wrong record IDs fail closed
+  ---
+  duration_ms: 0.5726
+  type: 'test'
+  ...
+# Subtest: record IDs retain uint256 precision and reject coercion shortcuts
+ok 10 - record IDs retain uint256 precision and reject coercion shortcuts
+  ---
+  duration_ms: 0.4727
+  type: 'test'
+  ...
+# Subtest: deep links bind exact chain, deployment, bounty and claim
+ok 11 - deep links bind exact chain, deployment, bounty and claim
+  ---
+  duration_ms: 0.7194
+  type: 'test'
+  ...
+# Subtest: dossier rejects a claim attached to a different bounty
+ok 12 - dossier rejects a claim attached to a different bounty
+  ---
+  duration_ms: 1.5489
+  type: 'test'
+  ...
+# Subtest: dossier exports original readbacks, exact scope and honest non-atomic timing
+ok 13 - dossier exports original readbacks, exact scope and honest non-atomic timing
+  ---
+  duration_ms: 0.5532
+  type: 'test'
+  ...
+# Subtest: bounty-only dossier does not fetch or invent a claim
+ok 14 - bounty-only dossier does not fetch or invent a claim
+  ---
+  duration_ms: 0.5228
+  type: 'test'
+  ...
+# Subtest: accounting uses bigint math and exposes insolvency and conservation failures separately
+ok 15 - accounting uses bigint math and exposes insolvency and conservation failures separately
+  ---
+  duration_ms: 0.3539
+  type: 'test'
+  ...
+# Subtest: evidence links preserve pinned revisions and reject URL injection tokens
+ok 16 - evidence links preserve pinned revisions and reject URL injection tokens
+  ---
+  duration_ms: 0.3649
+  type: 'test'
+  ...
+# Subtest: normalizes both SDK transaction shapes
+ok 17 - normalizes both SDK transaction shapes
+  ---
+  duration_ms: 0.2721
+  type: 'test'
+  ...
+# Subtest: requires finalized consensus and successful execution
+ok 18 - requires finalized consensus and successful execution
+  ---
+  duration_ms: 0.3007
+  type: 'test'
+  ...
+# Subtest: extracts exact returned record ID
+ok 19 - extracts exact returned record ID
+  ---
+  duration_ms: 0.3882
+  type: 'test'
+  ...
+# Subtest: compares wallet addresses case-insensitively
+ok 20 - compares wallet addresses case-insensitively
+  ---
+  duration_ms: 0.1288
+  type: 'test'
+  ...
+# Subtest: matches decimal and hexadecimal chain IDs without coercion ambiguity
+ok 21 - matches decimal and hexadecimal chain IDs without coercion ambiguity
+  ---
+  duration_ms: 0.1823
+  type: 'test'
+  ...
+# Subtest: connects a non-Snap wallet without calling a Snap method
+ok 22 - connects a non-Snap wallet without calling a Snap method
+  ---
+  duration_ms: 0.6208
+  type: 'test'
+  ...
+# Subtest: uses the selected provider instead of a global aggregator
+ok 23 - uses the selected provider instead of a global aggregator
+  ---
+  duration_ms: 0.2711
+  type: 'test'
+  ...
+# Subtest: switches the wrong chain and verifies the result
+ok 24 - switches the wrong chain and verifies the result
+  ---
+  duration_ms: 0.2536
+  type: 'test'
+  ...
+# Subtest: adds an unknown chain, switches and never requests Snaps
+ok 25 - adds an unknown chain, switches and never requests Snaps
+  ---
+  duration_ms: 0.4633
+  type: 'test'
+  ...
+# Subtest: propagates rejection without trying to add a chain
+ok 26 - propagates rejection without trying to add a chain
+  ---
+  duration_ms: 0.3282
+  type: 'test'
+  ...
+# Subtest: does not report connected after an ineffective switch
+ok 27 - does not report connected after an ineffective switch
+  ---
+  duration_ms: 0.2391
+  type: 'test'
+  ...
+# Subtest: rejects changed account and missing wallet
+ok 28 - rejects changed account and missing wallet
+  ---
+  duration_ms: 0.2671
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 107.3711

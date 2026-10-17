@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import {
   CONTRACT_ADDRESS,
   EXPLORER,
+  EXPLORER_SCOPE,
   connectWallet,
   isConfigured,
   readContract,
@@ -9,6 +10,7 @@ import {
   writeContract,
 } from './genlayer.js';
 import { returnedPositiveInt, sameAddress } from './transactions.js';
+import Explorer from './Explorer.jsx';
 
 const initialDraft = {
   owner: '',
@@ -233,12 +235,19 @@ export default function App() {
 
       <TxRail tx={tx} />
 
-      <section className="review-pack" aria-label="Steward review packet">
-        <p className="eyebrow">V2 / STEWARD REVIEW</p>
+      <Explorer read={readContract} scope={EXPLORER_SCOPE} onOpen={(selectedBounty, selectedClaim) => {
+        setBounty(selectedBounty); setBountyId(String(selectedBounty.id));
+        setClaim(selectedClaim); setClaimId(selectedClaim ? String(selectedClaim.id) : '');
+        setAuthorization(null); setMode('verify');
+        document.getElementById('workspace').scrollIntoView({ behavior: 'smooth' });
+      }} />
+
+      <section className="review-pack" aria-label="Source and verification guide">
+        <p className="eyebrow">V2 / SOURCE & VERIFICATION</p>
         <h2>One deployment. Traceable evidence.</h2>
         <p>Author-bound payout grants, prospective PR eligibility and complete paginated patches. Inspect settled records without connecting a wallet, or follow the guide to create a fresh two-wallet test.</p>
         <div className="review-links">
-          <a href={`${REVIEW}docs/STEWARD_SUBMIT.md`} target="_blank" rel="noreferrer">Submission & reviewer guide ↗</a>
+          <a href={`${REVIEW}docs/milestones/01-evidence-explorer.md`} target="_blank" rel="noreferrer">Evidence Explorer guide ↗</a>
           <a href={`${REVIEW}REVIEW_LINKS.md`} target="_blank" rel="noreferrer">All source & evidence ↗</a>
           <a href={`${REVIEW}docs/evidence/v2/TARGETED_LIVE.md`} target="_blank" rel="noreferrer">Domain / incomplete-patch live tests ↗</a>
         </div>
@@ -253,7 +262,7 @@ export default function App() {
         {['sponsor', 'developer', 'verify'].map((item) => <button key={item} className={mode === item ? 'active' : ''} onClick={() => setMode(item)}><span>0{['sponsor','developer','verify'].indexOf(item)+1}</span>{item}</button>)}
       </nav>
 
-      <section className="workspace">
+      <section className="workspace" id="workspace">
         <div className="workflow">
           {mode === 'sponsor' && <>
             <div className="section-title"><p>SPONSOR DESK</p><h2>Define an objective target</h2><span>The wallet that creates the bounty becomes its sponsor. The deployer has no special role.</span></div>

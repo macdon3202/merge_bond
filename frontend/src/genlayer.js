@@ -6,6 +6,7 @@ import { CONTRACT_VERSION, normalizeHash, receiptState, sameAddress, sameChainId
 
 export const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || '';
 export const EXPLORER = 'https://explorer-studio.genlayer.com';
+export const EXPLORER_SCOPE = Object.freeze({ contract: CONTRACT_ADDRESS, chainId: studionet.id });
 export const isConfigured = /^0x[0-9a-f]{40}$/i.test(CONTRACT_ADDRESS);
 const reader = () => createClient({ chain: studionet });
 

@@ -1,5 +1,10 @@
 # MergeBond
 
+Release 1.1.0 adds the [Public Bounty & Evidence Explorer](docs/milestones/01-evidence-explorer.md):
+browse live bounty/claim records, inspect source commitments and author grants,
+share deployment-scoped record links, and download dated accounting readbacks.
+No wallet is needed. [Changelog](CHANGELOG.md) · [Milestone roadmap](docs/milestones/ROADMAP.md).
+
 Current V2 steward packet: [REVIEW_LINKS.md](REVIEW_LINKS.md).
 Copy-ready submission and reviewer steps: [STEWARD_SUBMIT.md](docs/STEWARD_SUBMIT.md).
 
@@ -132,8 +137,7 @@ Contract changes require a fresh deployment. After deployment:
 
 ## What is not claimed yet
 
-- The supplied StudioNet address has not yet been source-matched through recorded Explorer evidence.
-- No live two-wallet transaction or real GEN transfer has been recorded.
+- V2 source parity and auxiliary-wallet settlement evidence are linked above; browser-extension signing remains unverified.
 - Cloudflare Pages production was deployed and HTTP/bundle binding was verified; see `docs/evidence/cloudflare-deployment.json`.
 - GitHub availability and unauthenticated API rate limits remain external dependencies.
 - Local mocks establish contract behavior under controlled inputs; they do not prove a public GitHub fixture exists or that StudioNet validators can retrieve it.

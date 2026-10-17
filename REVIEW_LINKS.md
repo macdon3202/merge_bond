@@ -1,5 +1,8 @@
 # MergeBond V2 — reviewer entry point
 
+- [Milestone 01: Public Bounty & Evidence Explorer](docs/milestones/01-evidence-explorer.md)
+- [Explorer live readback and export evidence](docs/evidence/milestone-01/live-readback.json)
+
 - [Live frontend](https://mergebond.pages.dev)
 - [Latest frontend publication checks](docs/evidence/v2/STEWARD_FRONTEND_PUBLICATION.md)
 - [Wallet compatibility remediation and production verification](docs/evidence/v2/WALLET_COMPATIBILITY.md)

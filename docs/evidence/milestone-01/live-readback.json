@@ -1,0 +1,355 @@
+{
+  "verified_at": "2026-10-17T08:43:04.808Z",
+  "scope": {
+    "contract": "0x850482D16aDD6237f269911da2516F1F51E58510",
+    "chainId": 61999
+  },
+  "contract_source_sha256": "c782ddc21e98c1486d319395093aa5ae326d54dab348f9c2d96746275eb68b68",
+  "method": "Production explorer functions with live StudioNet readContract; zero writes",
+  "pages": {
+    "bounties": {
+      "rows": [
+        {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "criteria": "V2 fixture: require strict boolean eligibility gates\n\nControlled MergeBond V2 test fixture. Acceptance criteria: isEligible returns true if and only if merged, checksPassed, productionChanged and regressionAdded are each exactly boolean true. Reject truthy strings, numbers, objects and arrays independently in every gate. Keep the all-true positive case and existing missingEligibilityGates behavior. Change fixture/src/eligibility.js and add regression tests in fixture/tests/eligibility.test.mjs. Required CI check: contract-tests. This issue is a synthetic resource for live contract verification, not a third-party bounty.",
+          "deadline": 1791626209,
+          "duration": 900,
+          "funded_at": 1791625309,
+          "id": 3,
+          "issue_digest": "8841d3d6cc20dd3c240a5927e2fac2866d41fdecdd183f91d11ef7bd6c4f8e2d",
+          "issue_number": 3,
+          "owner": "macdon3202",
+          "policy_digest": "195a50a77ee2b2a6cf6da060cc96f92abe69edfa269724c17e189ccc05c00213",
+          "production_prefix": "fixture/src/",
+          "reason": "NO_WINNER_BEFORE_DEADLINE",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0x0000000000000000000000000000000000000000",
+          "winning_claim": 0
+        },
+        {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "criteria": "V2 fixture: require strict boolean eligibility gates\n\nControlled MergeBond V2 test fixture. Acceptance criteria: isEligible returns true if and only if merged, checksPassed, productionChanged and regressionAdded are each exactly boolean true. Reject truthy strings, numbers, objects and arrays independently in every gate. Keep the all-true positive case and existing missingEligibilityGates behavior. Change fixture/src/eligibility.js and add regression tests in fixture/tests/eligibility.test.mjs. Required CI check: contract-tests. This issue is a synthetic resource for live contract verification, not a third-party bounty.",
+          "deadline": 1791624542,
+          "duration": 900,
+          "funded_at": 1791623642,
+          "id": 2,
+          "issue_digest": "8841d3d6cc20dd3c240a5927e2fac2866d41fdecdd183f91d11ef7bd6c4f8e2d",
+          "issue_number": 3,
+          "owner": "macdon3202",
+          "policy_digest": "f2221763acb1d9e2d15f7adc682493768a0bfb788a0b1460f247dbfbc6c8fad5",
+          "production_prefix": "fixture/src/",
+          "reason": "NO_WINNER_BEFORE_DEADLINE",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0x0000000000000000000000000000000000000000",
+          "winning_claim": 0
+        },
+        {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "criteria": "V2 fixture: require strict boolean eligibility gates\n\nControlled MergeBond V2 test fixture. Acceptance criteria: isEligible returns true if and only if merged, checksPassed, productionChanged and regressionAdded are each exactly boolean true. Reject truthy strings, numbers, objects and arrays independently in every gate. Keep the all-true positive case and existing missingEligibilityGates behavior. Change fixture/src/eligibility.js and add regression tests in fixture/tests/eligibility.test.mjs. Required CI check: contract-tests. This issue is a synthetic resource for live contract verification, not a third-party bounty.",
+          "deadline": 1791623255,
+          "duration": 900,
+          "funded_at": 1791622355,
+          "id": 1,
+          "issue_digest": "8841d3d6cc20dd3c240a5927e2fac2866d41fdecdd183f91d11ef7bd6c4f8e2d",
+          "issue_number": 3,
+          "owner": "macdon3202",
+          "policy_digest": "fefcdb8b2aaf1941886de04b902eb306d52636160b72eb3a3630319ffcf514e5",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        }
+      ],
+      "total": 3,
+      "page": 0,
+      "pages": 1
+    },
+    "claims": {
+      "rows": [
+        {
+          "authorization_digest": "1a7d716dde99876255a8be9a73297cb9ec37116fa4b73cb27e8952c79ba37201",
+          "bounty_id": 3,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "1e14f3c381079c0892efd998aaa813dd",
+          "gist_revision": "fa4012094e6cd27eae89181dd1ddaf082d4421b2",
+          "head_sha": "3324e370a2e3222f4bca60c7b0f6c7717eb2ce41",
+          "id": 4,
+          "merge_sha": "38b3bb18ad565c96c956303a20d952cff5f5a9e2",
+          "pr_number": 7,
+          "production_files": [],
+          "reason": "SOURCE_UNAVAILABLE",
+          "source_digest": "",
+          "state": "UNRESOLVED",
+          "submitted_at": 1791625739,
+          "test_files": [],
+          "verdict": ""
+        },
+        {
+          "authorization_digest": "034a41e818b826820ca2157c3d80808597f07ed7f46c777ae22eb38808fee274",
+          "bounty_id": 3,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "7640c9e4b0f93ff93cd47f9d24e7505a",
+          "gist_revision": "26c6bb97e2bf9e3887429f0702284774f6bda008",
+          "head_sha": "2fa8105ff9ebb4443f5e3eab6374a16228c8c192",
+          "id": 3,
+          "merge_sha": "73bcb17e55db26eee211ac42c2865542e0651f92",
+          "pr_number": 6,
+          "production_files": [],
+          "reason": "SOURCE_UNAVAILABLE",
+          "source_digest": "",
+          "state": "UNRESOLVED",
+          "submitted_at": 1791625463,
+          "test_files": [],
+          "verdict": ""
+        },
+        {
+          "authorization_digest": "0a7fff76c6dc43bd70342b1bf915488d6a4463da6f93d13cf46cc5d0430d2ba6",
+          "bounty_id": 2,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "8b91e9c251480839ba5fb942fcf30ba9",
+          "gist_revision": "9b99112e6b4bae89f4e9a29f7fc68086606a58ca",
+          "head_sha": "f54b123c909ac154844aab555b899170cfc196d1",
+          "id": 2,
+          "merge_sha": "285783c2b3e342f0ac58e3a9735cda1e688cf88a",
+          "pr_number": 5,
+          "production_files": [],
+          "reason": "",
+          "source_digest": "",
+          "state": "SUBMITTED",
+          "submitted_at": 1791624319,
+          "test_files": [],
+          "verdict": ""
+        },
+        {
+          "authorization_digest": "bd32229ce55d553fd81668c4660beb5d8b3a33b1d64704417efc42801d59f3f1",
+          "bounty_id": 1,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "f4a1798c0e2f6b1e6d578ef01f804d1f",
+          "gist_revision": "e8ef63c430bfb0ceadef5269c16fca56776ae190",
+          "head_sha": "035e11a4b8041a34c2b06876df83aa632b29a5a3",
+          "id": 1,
+          "merge_sha": "19b2396a1859a09306f1eeabe5102efab2f7a4ae",
+          "pr_number": 4,
+          "production_files": [
+            "fixture/src/eligibility.js"
+          ],
+          "reason": "CRITERIA_AND_PROVENANCE_SATISFIED",
+          "source_digest": "33e259b8ea90fed1182e9ab52eb35fc0dce62fed146fb03ccff9ee80962bcb11",
+          "state": "WINNER",
+          "submitted_at": 1791622509,
+          "test_files": [
+            "fixture/tests/eligibility.test.mjs"
+          ],
+          "verdict": "SATISFIED"
+        }
+      ],
+      "total": 4,
+      "page": 0,
+      "pages": 1
+    }
+  },
+  "dossiers": [
+    {
+      "link": "https://mergebond.pages.dev/?chain=61999&contract=0x850482D16aDD6237f269911da2516F1F51E58510&bounty=1&claim=1#explore",
+      "packet": {
+        "schema": "MERGEBOND_READBACK_V1",
+        "network": "studionet",
+        "chain_id": "61999",
+        "contract": "0x850482D16aDD6237f269911da2516F1F51E58510",
+        "observation": {
+          "started_at": "2026-10-17T08:42:58.511Z",
+          "completed_at": "2026-10-17T08:43:01.565Z",
+          "atomic": false
+        },
+        "config": {
+          "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+          "bounty_count": 3,
+          "claim_count": 4,
+          "deployer_authority": "NONE",
+          "duration_max": 900,
+          "duration_min": 120,
+          "version": "MERGE_BOND_V2"
+        },
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "criteria": "V2 fixture: require strict boolean eligibility gates\n\nControlled MergeBond V2 test fixture. Acceptance criteria: isEligible returns true if and only if merged, checksPassed, productionChanged and regressionAdded are each exactly boolean true. Reject truthy strings, numbers, objects and arrays independently in every gate. Keep the all-true positive case and existing missingEligibilityGates behavior. Change fixture/src/eligibility.js and add regression tests in fixture/tests/eligibility.test.mjs. Required CI check: contract-tests. This issue is a synthetic resource for live contract verification, not a third-party bounty.",
+          "deadline": 1791623255,
+          "duration": 900,
+          "funded_at": 1791622355,
+          "id": 1,
+          "issue_digest": "8841d3d6cc20dd3c240a5927e2fac2866d41fdecdd183f91d11ef7bd6c4f8e2d",
+          "issue_number": 3,
+          "owner": "macdon3202",
+          "policy_digest": "fefcdb8b2aaf1941886de04b902eb306d52636160b72eb3a3630319ffcf514e5",
+          "production_prefix": "fixture/src/",
+          "reason": "",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "winning_claim": 1
+        },
+        "claim": {
+          "authorization_digest": "bd32229ce55d553fd81668c4660beb5d8b3a33b1d64704417efc42801d59f3f1",
+          "bounty_id": 1,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "f4a1798c0e2f6b1e6d578ef01f804d1f",
+          "gist_revision": "e8ef63c430bfb0ceadef5269c16fca56776ae190",
+          "head_sha": "035e11a4b8041a34c2b06876df83aa632b29a5a3",
+          "id": 1,
+          "merge_sha": "19b2396a1859a09306f1eeabe5102efab2f7a4ae",
+          "pr_number": 4,
+          "production_files": [
+            "fixture/src/eligibility.js"
+          ],
+          "reason": "CRITERIA_AND_PROVENANCE_SATISFIED",
+          "source_digest": "33e259b8ea90fed1182e9ab52eb35fc0dce62fed146fb03ccff9ee80962bcb11",
+          "state": "WINNER",
+          "submitted_at": 1791622509,
+          "test_files": [
+            "fixture/tests/eligibility.test.mjs"
+          ],
+          "verdict": "SATISFIED"
+        },
+        "accounting": {
+          "balance": "0",
+          "claimant_claimable": "0",
+          "deposited": "3000000000000",
+          "locked": "0",
+          "outbound_requested": "3000000000000",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        },
+        "checks": {
+          "ledgerConserved": true,
+          "balanceCoversLiabilities": true,
+          "liabilitiesWei": "0"
+        },
+        "limitations": [
+          "Independent latest-state RPC reads, not a block-pinned snapshot or signed attestation.",
+          "Contract accounting is global, not this bounty alone. Outbound requests do not prove recipient settlement.",
+          "Controlled historical fixtures are not real-user traction or an independent audit.",
+          "Source digests commit to acquired evidence; they are not a new GitHub fetch or semantic re-evaluation."
+        ]
+      }
+    },
+    {
+      "link": "https://mergebond.pages.dev/?chain=61999&contract=0x850482D16aDD6237f269911da2516F1F51E58510&bounty=3&claim=4#explore",
+      "packet": {
+        "schema": "MERGEBOND_READBACK_V1",
+        "network": "studionet",
+        "chain_id": "61999",
+        "contract": "0x850482D16aDD6237f269911da2516F1F51E58510",
+        "observation": {
+          "started_at": "2026-10-17T08:43:01.567Z",
+          "completed_at": "2026-10-17T08:43:04.798Z",
+          "atomic": false
+        },
+        "config": {
+          "architecture": "COMPETITIVE_CLAIM_POOL_CRITERIA_LATTICE",
+          "bounty_count": 3,
+          "claim_count": 4,
+          "deployer_authority": "NONE",
+          "duration_max": 900,
+          "duration_min": 120,
+          "version": "MERGE_BOND_V2"
+        },
+        "bounty": {
+          "amount": "1000000000000",
+          "base_branch": "main",
+          "claimant_due": "0",
+          "criteria": "V2 fixture: require strict boolean eligibility gates\n\nControlled MergeBond V2 test fixture. Acceptance criteria: isEligible returns true if and only if merged, checksPassed, productionChanged and regressionAdded are each exactly boolean true. Reject truthy strings, numbers, objects and arrays independently in every gate. Keep the all-true positive case and existing missingEligibilityGates behavior. Change fixture/src/eligibility.js and add regression tests in fixture/tests/eligibility.test.mjs. Required CI check: contract-tests. This issue is a synthetic resource for live contract verification, not a third-party bounty.",
+          "deadline": 1791626209,
+          "duration": 900,
+          "funded_at": 1791625309,
+          "id": 3,
+          "issue_digest": "8841d3d6cc20dd3c240a5927e2fac2866d41fdecdd183f91d11ef7bd6c4f8e2d",
+          "issue_number": 3,
+          "owner": "macdon3202",
+          "policy_digest": "195a50a77ee2b2a6cf6da060cc96f92abe69edfa269724c17e189ccc05c00213",
+          "production_prefix": "fixture/src/",
+          "reason": "NO_WINNER_BEFORE_DEADLINE",
+          "repository": "merge_bond",
+          "required_check": "contract-tests",
+          "sponsor": "0xfed97e2ae1a8c1983b7ca206b3545e6a2c685e43",
+          "sponsor_due": "0",
+          "state": "PAID",
+          "test_prefix": "fixture/tests/",
+          "winner": "0x0000000000000000000000000000000000000000",
+          "winning_claim": 0
+        },
+        "claim": {
+          "authorization_digest": "1a7d716dde99876255a8be9a73297cb9ec37116fa4b73cb27e8952c79ba37201",
+          "bounty_id": 3,
+          "claimant": "0xc67532aef9d2879cba9375a02e6217a3524657b8",
+          "contributor_id": 320846373,
+          "gist_id": "1e14f3c381079c0892efd998aaa813dd",
+          "gist_revision": "fa4012094e6cd27eae89181dd1ddaf082d4421b2",
+          "head_sha": "3324e370a2e3222f4bca60c7b0f6c7717eb2ce41",
+          "id": 4,
+          "merge_sha": "38b3bb18ad565c96c956303a20d952cff5f5a9e2",
+          "pr_number": 7,
+          "production_files": [],
+          "reason": "SOURCE_UNAVAILABLE",
+          "source_digest": "",
+          "state": "UNRESOLVED",
+          "submitted_at": 1791625739,
+          "test_files": [],
+          "verdict": ""
+        },
+        "accounting": {
+          "balance": "0",
+          "claimant_claimable": "0",
+          "deposited": "3000000000000",
+          "locked": "0",
+          "outbound_requested": "3000000000000",
+          "refund_claimable": "0",
+          "sponsor_claimable": "0"
+        },
+        "checks": {
+          "ledgerConserved": true,
+          "balanceCoversLiabilities": true,
+          "liabilitiesWei": "0"
+        },
+        "limitations": [
+          "Independent latest-state RPC reads, not a block-pinned snapshot or signed attestation.",
+          "Contract accounting is global, not this bounty alone. Outbound requests do not prove recipient settlement.",
+          "Controlled historical fixtures are not real-user traction or an independent audit.",
+          "Source digests commit to acquired evidence; they are not a new GitHub fetch or semantic re-evaluation."
+        ]
+      }
+    }
+  ]
+}

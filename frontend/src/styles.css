@@ -121,6 +121,59 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .how-grid p { color: #526058; line-height: 1.6; font-size: 14px; }
 footer { border-top: 1px solid var(--line); padding: 28px 0 38px; display: flex; justify-content: space-between; gap: 30px; font: 11px DM Mono, monospace; color: #637068; }
 
+.explorer { scroll-margin-top: 20px; background: var(--paper); border: 1px solid var(--ink); padding: clamp(18px, 3vw, 40px); margin: 20px 0 32px; }
+.explorer-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.explorer-heading h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.05em; line-height: 1.05; }
+.explorer-heading p:not(.eyebrow) { color: #526058; line-height: 1.6; max-width: 640px; }
+.explorer-heading button { flex-shrink: 0; }
+.explorer-toolbar { display: grid; grid-template-columns: auto minmax(130px, 1fr) minmax(130px, .6fr); align-items: end; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.explorer-toolbar label, .share-link { display: grid; gap: 8px; font-size: 12px; font-weight: 700; }
+.explorer-toolbar select { width: 100%; padding: 13px 8px; font: inherit; color: var(--ink); border: 1px solid #aeb8ac; background: white; }
+.explorer-toolbar button, .pagination button { background: transparent; padding: 13px; border: 1px solid var(--line); text-transform: capitalize; }
+.explorer-toolbar button[aria-pressed=true] { background: var(--ink); color: white; }
+.explorer-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 30px; padding-top: 24px; }
+.explorer-grid > div > small { display: block; line-height: 1.6; color: #526058; }
+.explorer-count { margin-top: 0; font: 12px DM Mono, monospace; line-height: 1.8; }
+.record-list { display: grid; gap: 12px; }
+.record-card { text-align: left; display: grid; gap: 12px; min-width: 0; padding: 20px; border: 1px solid var(--line); background: white; color: var(--ink); overflow-wrap: anywhere; }
+.record-card:hover, .record-card:focus-visible { border-color: var(--green); background: #eaf8ed; }
+.record-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font: 12px DM Mono, monospace; }
+.record-card strong { font-size: 20px; }
+.state-tag { background: #e1f4e9; padding: 5px 8px; font-size: 10px; }
+.record-card-link { color: var(--green); font-size: 12px; font-weight: 700; }
+.pagination { display: flex; gap: 10px; margin: 18px 0; }
+.dossier { min-width: 0; padding: 24px; background: #edf2e9; border: 1px solid var(--line); align-self: start; }
+.dossier h3 { font-size: 28px; margin: 10px 0; overflow-wrap: anywhere; }
+.observation { font-size: 12px; line-height: 1.6; color: #526058; }
+.dossier-facts { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.dossier-facts > div { border-color: var(--line); }
+.dossier-facts dt { color: #4f6255; }
+.dossier-facts dd { font: 11px DM Mono, monospace; line-height: 1.7; }
+.dossier details { margin: 16px 0; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.dossier summary { cursor: pointer; font-size: 13px; font-weight: 700; }
+.dossier pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 320px; overflow: auto; font: 12px/1.7 DM Mono, monospace; }
+.evidence-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; font-size: 12px; color: var(--green); }
+.accounting-panel { padding: 18px; background: #fff; margin: 20px 0; }
+.accounting-panel h4 { margin: 0 0 10px; }
+.accounting-panel p, .accounting-panel small { font-size: 12px; line-height: 1.6; }
+.accounting-ok { color: #075b3e; }
+.dossier-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.share-link input { font: 11px DM Mono, monospace; min-width: 0; }
+.empty-light { padding: 30px 20px; border: 1px dashed #829381; color: #526058; line-height: 1.7; }
+.explorer-error { color: #952c10; line-height: 1.6; background: #ffe9df; padding: 12px; }
+button:focus-visible, a:focus-visible, summary:focus-visible, select:focus-visible { outline: 3px solid #07855a; outline-offset: 3px; }
+
+@media (max-width: 1000px) {
+  .explorer-grid { grid-template-columns: 1fr; }
+  .explorer-heading { flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .explorer-toolbar { grid-template-columns: 1fr; }
+  .dossier { padding: 16px; }
+  .dossier-facts { grid-template-columns: 1fr; }
+  .dossier-facts > div.full { grid-column: auto; }
+}
+
 @media (max-width: 900px) {
   main { width: min(100% - 20px, 760px); }
   header { gap: 8px; }
